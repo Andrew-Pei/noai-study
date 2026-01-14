@@ -683,17 +683,6 @@ main {
     padding-left: 2.5rem;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, var(--primary) 0%, var(--success) 50%, var(--warning) 100%);
-    border-radius: var(--radius-full);
-}
-
 .timeline-item {
     position: relative;
     margin-bottom: 2rem;
