@@ -24,9 +24,7 @@
 </head>
 <body>
     <!-- 页面加载指示器 -->
-    <div id="loadingOverlay" class="loading-overlay">
-        <div class="loading-spinner"></div>
-    </div>
+    <div id="loadingOverlay" class="loading-overlay"><div class="loading-spinner"></div></div>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
@@ -354,43 +352,5 @@
     <script src="js/main.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/progress-tracker.js"></script>
-
-    <!-- 备用脚本：确保加载指示器一定会被隐藏 -->
-    <script>
-        (function() {
-            // 立即尝试隐藏加载指示器
-            function hideLoadingOverlay() {
-                const loadingOverlay = document.getElementById('loadingOverlay');
-                if (loadingOverlay) {
-                    loadingOverlay.classList.add('hidden');
-                    return true;
-                }
-                return false;
-            }
-
-            // 如果页面已经加载完成，立即隐藏
-            if (document.readyState === 'complete') {
-                hideLoadingOverlay();
-            }
-
-            // 监听load事件
-            window.addEventListener('load', function() {
-                setTimeout(hideLoadingOverlay, 300);
-            });
-
-            // 备用定时器：3秒后强制隐藏
-            setTimeout(function() {
-                hideLoadingOverlay();
-            }, 3000);
-
-            // 点击加载指示器可以关闭
-            document.addEventListener('click', function(e) {
-                const loadingOverlay = document.getElementById('loadingOverlay');
-                if (loadingOverlay && loadingOverlay.contains(e.target)) {
-                    hideLoadingOverlay();
-                }
-            });
-        })();
-    </script>
 </body>
 </html>
