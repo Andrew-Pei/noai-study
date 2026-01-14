@@ -669,11 +669,11 @@ function resetAllDemos() {
         // 重置推荐系统演示
         document.getElementById('recPlaceholder').style.display = 'block';
         document.getElementById('recommendationList').style.display = 'none';
-        
+
         // 重置类型选择
         const genreOptions = document.querySelectorAll('.genre-option');
         genreOptions.forEach(option => option.classList.remove('selected'));
-        
+
         alert('所有演示已重置！');
     }
 }
@@ -683,3 +683,5 @@ window.sendMessage = sendMessage;
 window.askQuickQuestion = askQuickQuestion;
 window.generateRecommendations = generateRecommendations;
 window.resetAllDemos = resetAllDemos;
+
+})();

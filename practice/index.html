@@ -7,15 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
 <body data-page="practice">
     <div id="loadingOverlay" class="loading-overlay"><div class="loading-spinner"></div></div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/images/logo.png" alt="NOAI Logo" height="32" class="me-2"> 
                 NOAI 竞赛学习平台
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -23,14 +24,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">AI基础</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="basics.html">AI基础概念</a></li><li><a class="dropdown-item" href="python-basics.html">Python编程</a></li><li><a class="dropdown-item" href="ethics.html">AI伦理法律</a></li></ul></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">机器学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="machine-learning.html">机器学习基础</a></li><li><a class="dropdown-item" href="neural-networks.html">神经网络基础</a></li></ul></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">深度学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="cnn-rnn.html">CNN与RNN</a></li><li><a class="dropdown-item" href="generative-models.html">生成模型</a></li><li><a class="dropdown-item" href="reinforcement.html">强化学习</a></li></ul></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">前沿技术</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="llm-prompt.html">LLM与提示工程</a></li><li><a class="dropdown-item" href="ai-agent.html">AI智能体系统</a></li></ul></li>
-                    <li class="nav-item"><a class="nav-link active" href="practice.html">练习题库</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resources.html">学习资源</a></li>
-                    <li class="nav-item"><a class="nav-link" href="my-progress.html">我的进度</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">AI基础</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="../pages/basics.html">AI基础概念</a></li><li><a class="dropdown-item" href="../pages/python-basics.html">Python编程</a></li><li><a class="dropdown-item" href="../pages/ethics.html">AI伦理法律</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">机器学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="../pages/machine-learning.html">机器学习基础</a></li><li><a class="dropdown-item" href="../pages/neural-networks.html">神经网络基础</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">深度学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="../pages/cnn-rnn.html">CNN与RNN</a></li><li><a class="dropdown-item" href="../pages/generative-models.html">生成模型</a></li><li><a class="dropdown-item" href="../pages/reinforcement.html">强化学习</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">前沿技术</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="../pages/llm-prompt.html">LLM与提示工程</a></li><li><a class="dropdown-item" href="../pages/ai-agent.html">AI智能体系统</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link active" href="../practice/index.html">练习题库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/resources.html">学习资源</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/my-progress.html">我的进度</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +47,7 @@
         </div>
     </header>
 
-    <div class="container py-3"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">首页</a></li><li class="breadcrumb-item active">练习题库</li></ol></nav></div>
+    <div class="container py-3"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">首页</a></li><li class="breadcrumb-item active">练习题库</li></ol></nav></div>
 
     <main class="py-5"><div class="container">
         <div class="row mb-4">
@@ -130,8 +131,7 @@
         </div>
     </div>
 
-    <footer class="footer"><div class="container"><div class="row align-items-center"><div class="col-md-6"><p class="footer-text mb-0">© 2026 重庆市第八中学校 | NOAI 竞赛学习平台</p></div><div class="col-md-6 text-md-end"><a href="my-progress.html" class="footer-link">查看我的进度 <i class="bi bi-arrow-right"></i></a></div></div></div></footer>
+    <footer class="footer"><div class="container"><div class="row align-items-center"><div class="col-md-6"><p class="footer-text mb-0">© 2026 重庆市第八中学校 | NOAI 竞赛学习平台</p></div><div class="col-md-6 text-md-end"><a href="../pages/my-progress.html" class="footer-link">查看我的进度 <i class="bi bi-arrow-right"></i></a></div></div></div></footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script src="js/main.js"></script><script src="js/countdown.js"></script><script src="js/progress-tracker.js"></script><script src="js/practice.js"></script>
 </body>
 </html>

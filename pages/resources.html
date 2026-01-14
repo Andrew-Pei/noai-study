@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学习资源 - 重庆八中 NOAI 竞赛</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  </head>
+  <body>
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="NOAI Logo"
+            height="32"
+            class="me-2"
+          />
+          NOAI 竞赛学习平台
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">首页</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >AI基础</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="basics.html"
+                    >AI基础概念</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="python-basics.html"
+                    >Python编程</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ethics.html"
+                    >AI伦理法律</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >机器学习</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="machine-learning.html"
+                    >机器学习基础</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="neural-networks.html"
+                    >神经网络基础</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >深度学习</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="cnn-rnn.html"
+                    >CNN与RNN</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="generative-models.html"
+                    >生成模型</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="reinforcement.html"
+                    >强化学习</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >前沿技术</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="llm-prompt.html"
+                    >LLM与提示工程</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ai-agent.html"
+                    >AI智能体系统</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../practice/index.html">练习题库</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="resources.html">学习资源</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="my-progress.html">我的进度</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header page-header-resources text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="page-icon mb-3"><i class="bi bi-book"></i></div>
+            <h1 class="display-4 fw-bold mb-3">学习资源</h1>
+            <p class="lead mb-0">NOAI 官方资料与精选学习资源</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container py-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">首页</a></li>
+          <li class="breadcrumb-item active">学习资源</li>
+        </ol>
+      </nav>
+    </div>
+
+    <main class="py-5">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-3 mb-4">
+            <div class="sidebar-card sticky-top">
+              <h5 class="sidebar-title">资源分类</h5>
+              <div class="list-group list-group-flush">
+                <a href="#noai" class="list-group-item list-group-item-action"
+                  >NOAI 官方</a
+                >
+                <a
+                  href="#courses"
+                  class="list-group-item list-group-item-action"
+                  >推荐课程</a
+                >
+                <a href="#books" class="list-group-item list-group-item-action"
+                  >参考书籍</a
+                >
+                <a href="#tools" class="list-group-item list-group-item-action"
+                  >开发工具</a
+                >
+                <a href="#videos" class="list-group-item list-group-item-action"
+                  >视频教程</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+            <!-- NOAI 官方资源 -->
+            <section id="noai" class="content-section mb-5">
+              <h2 class="section-title">
+                <i class="bi bi-trophy-fill text-warning me-2"></i>
+                NOAI 官方资源
+              </h2>
+              <div class="content-card">
+                <div class="alert alert-warning">
+                  <i class="bi bi-exclamation-triangle me-2"></i>
+                  以下资源是 NOAI 官方发布的最新资料，请务必认真阅读！
+                </div>
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="official-resource">
+                      <div class="official-badge">学术大纲</div>
+                      <h5>NOAI 2026 学术大纲</h5>
+                      <p class="small">
+                        包含三大模块详细考点说明，是备考的核心资料
+                      </p>
+                      <ul class="small">
+                        <li>人工智能基础 (30%)</li>
+                        <li>深度学习应用 (40%)</li>
+                        <li>AI+ 系统创新 (30%)</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="official-resource">
+                      <div class="official-badge blue">推荐课程</div>
+                      <h5>NOL 人工智能评测课程</h5>
+                      <p class="small">官方配套课程，分三个阶段系统学习</p>
+                      <ul class="small">
+                        <li>入门阶段：AI 基础认知</li>
+                        <li>进阶阶段：核心算法原理</li>
+                        <li>高阶阶段：综合应用与创新</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-4 mt-3">
+                  <div class="col-md-4">
+                    <a
+                      href="https://ai.nol.online"
+                      target="_blank"
+                      class="link-card"
+                    >
+                      <i class="bi bi-globe"></i>
+                      <h6>NOL 官方网站</h6>
+                      <p class="small">ai.nol.online</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="../practice/index.html" class="link-card">
+                      <i class="bi bi-file-earmark-text"></i>
+                      <h6>历年真题</h6>
+                      <p class="small">2024-2025 试题及答案</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="link-card">
+                      <i class="bi bi-clock-history"></i>
+                      <h6>考试倒计时</h6>
+                      <p class="small">2026年3月22日 初赛</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 推荐课程 -->
+            <section id="courses" class="content-section mb-5">
+              <h2 class="section-title">
+                <i class="bi bi-laptop text-primary me-2"></i>
+                推荐课程
+              </h2>
+              <div class="content-card">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="course-card">
+                      <div class="course-header">
+                        <h5>AI For Everyone</h5>
+                        <span class="course-platform">Coursera</span>
+                      </div>
+                      <p class="small">
+                        面向非技术人员的AI入门课程，讲解AI基础概念和应用
+                      </p>
+                      <div class="course-info">
+                        <span class="badge bg-success">免费</span>
+                        <span class="text-muted small">约6小时</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="course-card">
+                      <div class="course-header">
+                        <h5>机器学习基础</h5>
+                        <span class="course-platform">学堂在线</span>
+                      </div>
+                      <p class="small">
+                        清华大学推出的中文机器学习课程，系统讲解基本原理
+                      </p>
+                      <div class="course-info">
+                        <span class="badge bg-success">免费</span>
+                        <span class="text-muted small">约20小时</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 参考书籍 -->
+            <section id="books" class="content-section mb-5">
+              <h2 class="section-title">
+                <i class="bi bi-book text-primary me-2"></i>
+                参考书籍
+              </h2>
+              <div class="content-card">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="resource-card">
+                      <div class="resource-icon bg-success">
+                        <i class="bi bi-book"></i>
+                      </div>
+                      <h5>Python编程：从入门到实践</h5>
+                      <p class="small">适合零基础的Python入门书籍</p>
+                      <div class="resource-tags">
+                        <span class="badge bg-light text-dark">入门</span>
+                        <span class="badge bg-light text-dark">Python</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="resource-card">
+                      <div class="resource-icon bg-primary">
+                        <i class="bi bi-book"></i>
+                      </div>
+                      <h5>机器学习实战</h5>
+                      <p class="small">通过Python实践学习机器学习算法</p>
+                      <div class="resource-tags">
+                        <span class="badge bg-light text-dark">实践</span>
+                        <span class="badge bg-light text-dark">ML</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="resource-card">
+                      <div class="resource-icon bg-info">
+                        <i class="bi bi-book"></i>
+                      </div>
+                      <h5>深度学习（花书）</h5>
+                      <p class="small">
+                        Ian Goodfellow 等著，深度学习领域经典教材
+                      </p>
+                      <div class="resource-tags">
+                        <span class="badge bg-light text-dark">进阶</span>
+                        <span class="badge bg-light text-dark">DL</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 开发工具 -->
+            <section id="tools" class="content-section mb-5">
+              <h2 class="section-title">
+                <i class="bi bi-tools text-primary me-2"></i>
+                开发工具
+              </h2>
+              <div class="content-card">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="tool-card">
+                      <div class="tool-icon">
+                        <i class="bi bi-code-slash"></i>
+                      </div>
+                      <div class="tool-content">
+                        <h5>Google Colab</h5>
+                        <p class="small">
+                          免费的云端Python编程环境，支持GPU加速，适合机器学习实践
+                        </p>
+                        <a
+                          href="https://colab.research.google.com"
+                          target="_blank"
+                          class="btn btn-sm btn-outline-success"
+                          >访问网站</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="tool-card">
+                      <div class="tool-icon">
+                        <i class="bi bi-diagram-3"></i>
+                      </div>
+                      <div class="tool-content">
+                        <h5>TensorFlow Playground</h5>
+                        <p class="small">
+                          交互式神经网络可视化工具，帮助理解神经网络工作原理
+                        </p>
+                        <a
+                          href="https://playground.tensorflow.org"
+                          target="_blank"
+                          class="btn btn-sm btn-outline-success"
+                          >访问网站</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="tool-card">
+                      <div class="tool-icon">
+                        <i class="bi bi-graph-up"></i>
+                      </div>
+                      <div class="tool-content">
+                        <h5>Kaggle</h5>
+                        <p class="small">
+                          数据科学竞赛平台，提供免费数据集和教程
+                        </p>
+                        <a
+                          href="https://www.kaggle.com"
+                          target="_blank"
+                          class="btn btn-sm btn-outline-success"
+                          >访问网站</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="tool-card">
+                      <div class="tool-icon">
+                        <i class="bi bi-chat-text"></i>
+                      </div>
+                      <div class="tool-content">
+                        <h5>ChatGPT / Claude</h5>
+                        <p class="small">大语言模型，辅助学习和编程</p>
+                        <span class="badge bg-info">学习助手</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 视频教程 -->
+            <section id="videos" class="content-section">
+              <h2 class="section-title">
+                <i class="bi bi-play-btn text-primary me-2"></i>
+                视频教程
+              </h2>
+              <div class="content-card">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="video-card">
+                      <div class="video-thumbnail">
+                        <i class="bi bi-play-circle display-4"></i>
+                      </div>
+                      <h5>3Blue1Brown神经网络系列</h5>
+                      <p class="small">
+                        用可视化方式讲解神经网络原理，直观易懂
+                      </p>
+                      <div class="video-source">
+                        <i class="bi bi-youtube text-danger"></i> YouTube
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="video-card">
+                      <div class="video-thumbnail">
+                        <i class="bi bi-play-circle display-4"></i>
+                      </div>
+                      <h5>李宏毅机器学习课程</h5>
+                      <p class="small">
+                        台湾大学的中文机器学习课程，讲解生动有趣
+                      </p>
+                      <div class="video-source">
+                        <i class="bi bi-youtube text-danger"></i> YouTube
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="video-card">
+                      <div class="video-thumbnail">
+                        <i class="bi bi-play-circle display-4"></i>
+                      </div>
+                      <h5>CS50 AI with Python</h5>
+                      <p class="small">哈佛大学AI课程，结合Python实践</p>
+                      <div class="video-source">
+                        <i class="bi bi-youtube text-danger"></i> YouTube
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-text mb-0">
+              © 2026 重庆市第八中学校 | NOAI 竞赛学习平台
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="https://ai.nol.online" target="_blank" class="footer-link"
+              >NOL 官网</a
+            >
+            <span class="mx-2">·</span>
+            <span>初赛：2026年3月22日</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/core.js"></script>
+
+    <style>
+      .page-header-resources {
+        background: linear-gradient(135deg, #28a745, #20c997);
+      }
+      .official-resource {
+        padding: 20px;
+        background: #fff8e1;
+        border-radius: 10px;
+        border: 2px solid #ffc107;
+        position: relative;
+      }
+      .official-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: #ffc107;
+        color: #000;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      .official-badge.blue {
+        background: #c4d8f7;
+        color: white;
+      }
+      .link-card {
+        display: block;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s;
+      }
+      .link-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background: white;
+      }
+      .link-card i {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+      .course-card,
+      .resource-card,
+      .tool-card,
+      .video-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      .tool-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .tool-icon {
+        width: 50px;
+        height: 50px;
+        background: #e7f3ff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+      .video-thumbnail {
+        height: 120px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+    </style>
+  </body>
+</html>

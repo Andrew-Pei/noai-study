@@ -1,31 +1,31 @@
 {
-  "name": "ai-learning-center",
-  "version": "1.1.0",
-  "description": "专为中学生设计的人工智能学习网站",
-  "main": "index.html",
+  "name": "noai-learning-platform",
+  "version": "2.0.0",
+  "description": "NOAI竞赛学习平台 - 后端服务",
+  "main": "server/index.js",
   "scripts": {
-    "start": "echo '打开 start.html 文件开始使用'",
-    "test": "echo '运行测试文件: test.html'"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "node server/test.js"
   },
   "keywords": [
-    "人工智能",
-    "机器学习",
-    "神经网络",
-    "AI教育",
-    "中学生",
-    "编程学习",
-    "互动教学"
+    "NOAI",
+    "education",
+    "python",
+    "AI"
   ],
-  "author": "AI学习中心",
+  "author": "重庆八中NOAI竞赛团队",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/ai-study"
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.6"
   },
-  "bugs": {
-    "url": "https://github.com/your-username/ai-study/issues"
-  },
-  "homepage": "https://github.com/your-username/ai-study#readme",
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "supertest": "^7.2.2"
+  }
 }

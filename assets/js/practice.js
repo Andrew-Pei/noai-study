@@ -2,6 +2,17 @@
 (function() {
     'use strict';
 
+    // HTML转义函数，防止XSS攻击
+    function escapeHtml(unsafe) {
+        if (typeof unsafe !== 'string') return unsafe;
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
     // 从NOAI真题中提取的题目数据
     const exam2025 = [
         {id:1,type:"single",question:"以下哪个不是Python的基本数据类型？",options:["int","float","char","bool"],answer:2},
@@ -98,37 +109,65 @@
         document.getElementById('nextBtn').classList.toggle('d-none', currentIndex === currentQuiz.length-1);
         document.getElementById('submitBtn').classList.toggle('d-none', currentIndex !== currentQuiz.length-1);
 
-        let html = `<h5>${currentIndex+1}. ${q.question}</h5><div class="quiz-options">`;
+        // 使用安全的DOM方法创建选项，避免innerHTML的XSS风险
+        const wrapper = document.createElement('div');
+        const questionEl = document.createElement('h5');
+        questionEl.textContent = `${currentIndex+1}. ${q.question}`;
+        wrapper.appendChild(questionEl);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'quiz-options';
 
         if(q.type === 'single') {
             q.options.forEach((opt,i) => {
                 const checked = userAnswers[q.id] === i ? 'checked' : '';
-                html += `<div class="form-check">
+                const formCheck = document.createElement('div');
+                formCheck.className = 'form-check';
+                formCheck.innerHTML = `
                     <input class="form-check-input" type="radio" name="q${q.id}" id="q${q.id}_${i}" value="${i}" ${checked} onchange="saveAnswer(${q.id},${i})">
-                    <label class="form-check-label" for="q${q.id}_${i}">${String.fromCharCode(65+i)}. ${opt}</label>
-                </div>`;
+                    <label class="form-check-label" for="q${q.id}_${i}"></label>
+                `;
+                const label = formCheck.querySelector('label');
+                label.textContent = `${String.fromCharCode(65+i)}. ${opt}`;
+                optionsDiv.appendChild(formCheck);
             });
         } else if(q.type === 'judge') {
             const trueChecked = userAnswers[q.id] === true ? 'checked' : '';
             const falseChecked = userAnswers[q.id] === false ? 'checked' : '';
-            html += `<div class="form-check">
+
+            const formCheck1 = document.createElement('div');
+            formCheck1.className = 'form-check';
+            formCheck1.innerHTML = `
                 <input class="form-check-input" type="radio" name="q${q.id}" id="q${q.id}_true" value="true" ${trueChecked} onchange="saveAnswer(${q.id},true)">
                 <label class="form-check-label" for="q${q.id}_true">正确</label>
-            </div><div class="form-check">
+            `;
+            optionsDiv.appendChild(formCheck1);
+
+            const formCheck2 = document.createElement('div');
+            formCheck2.className = 'form-check';
+            formCheck2.innerHTML = `
                 <input class="form-check-input" type="radio" name="q${q.id}" id="q${q.id}_false" value="false" ${falseChecked} onchange="saveAnswer(${q.id},false)">
                 <label class="form-check-label" for="q${q.id}_false">错误</label>
-            </div>`;
+            `;
+            optionsDiv.appendChild(formCheck2);
         } else if(q.type === 'multi') {
             q.options.forEach((opt,i) => {
                 const checked = (userAnswers[q.id]||[]).includes(i) ? 'checked' : '';
-                html += `<div class="form-check">
+                const formCheck = document.createElement('div');
+                formCheck.className = 'form-check';
+                formCheck.innerHTML = `
                     <input class="form-check-input" type="checkbox" name="q${q.id}" id="q${q.id}_${i}" value="${i}" ${checked} onchange="saveMultiAnswer(${q.id},${i})">
-                    <label class="form-check-label" for="q${q.id}_${i}">${String.fromCharCode(65+i)}. ${opt}</label>
-                </div>`;
+                    <label class="form-check-label" for="q${q.id}_${i}"></label>
+                `;
+                const label = formCheck.querySelector('label');
+                label.textContent = `${String.fromCharCode(65+i)}. ${opt}`;
+                optionsDiv.appendChild(formCheck);
             });
         }
-        html += '</div>';
-        container.innerHTML = html;
+
+        wrapper.appendChild(optionsDiv);
+        container.innerHTML = '';
+        container.appendChild(wrapper);
     }
 
     window.saveAnswer = function(qid, val) { userAnswers[qid] = val; };
@@ -174,12 +213,24 @@
         if(window.NOAIProgress) {
             const wrongs = window.NOAIProgress.getWrongQuestions();
             if(wrongs.length > 0) {
-                let html = '<div class="row g-3">';
+                list.innerHTML = '';
+                const row = document.createElement('div');
+                row.className = 'row g-3';
                 wrongs.slice(0,10).forEach(w => {
-                    html += `<div class="col-md-6"><div class="wrong-q-card"><h6>${w.question}</h6><p class="small mb-0"><span class="text-danger">你的答案: ${w.yourAnswer}</span> | <span class="text-success">正确答案: ${w.correctAnswer}</span></p></div></div>`;
+                    const col = document.createElement('div');
+                    col.className = 'col-md-6';
+                    col.innerHTML = '<div class="wrong-q-card"><h6></h6><p class="small mb-0"><span class="text-danger"></span> | <span class="text-success"></span></p></div>';
+                    const card = col.querySelector('.wrong-q-card');
+                    card.querySelector('h6').textContent = w.question;
+                    const dangerSpan = card.querySelector('.text-danger');
+                    dangerSpan.textContent = '你的答案: ' + (w.yourAnswer || '未作答');
+                    const successSpan = card.querySelector('.text-success');
+                    successSpan.textContent = '正确答案: ' + (w.correctAnswer || '未知');
+                    row.appendChild(col);
                 });
-                html += '</div>';
-                list.innerHTML = html;
+                list.appendChild(row);
+            } else {
+                list.innerHTML = '<p class="text-muted">暂无错题记录</p>';
             }
         }
     }

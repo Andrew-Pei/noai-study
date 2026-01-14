@@ -9,6 +9,8 @@
     <meta property="og:title" content="重庆八中NOAI竞赛学习平台">
     <meta property="og:description" content="备战NOAI 2026人工智能竞赛，系统学习AI知识">
     <meta property="og:type" content="website">
+    <!-- 内容安全策略 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://ai.nol.online;">
     <title>重庆八中NOAI竞赛学习平台</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -29,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                NOAI 竞赛学习平台
+                <img src="assets/images/logo.png" alt="NOAI Logo" height="32" class="me-2"> NOAI 竞赛学习平台
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -40,36 +42,37 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">AI基础</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="basics.html">AI基础概念</a></li>
-                            <li><a class="dropdown-item" href="python-basics.html">Python编程</a></li>
-                            <li><a class="dropdown-item" href="ethics.html">AI伦理法律</a></li>
+                            <li><a class="dropdown-item" href="pages/basics.html">AI基础概念</a></li>
+                            <li><a class="dropdown-item" href="pages/python-basics.html">Python编程</a></li>
+                            <li><a class="dropdown-item" href="pages/ethics.html">AI伦理法律</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">机器学习</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="machine-learning.html">机器学习基础</a></li>
-                            <li><a class="dropdown-item" href="neural-networks.html">神经网络基础</a></li>
+                            <li><a class="dropdown-item" href="pages/machine-learning.html">机器学习基础</a></li>
+                            <li><a class="dropdown-item" href="pages/neural-networks.html">神经网络基础</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">深度学习</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="cnn-rnn.html">CNN与RNN</a></li>
-                            <li><a class="dropdown-item" href="generative-models.html">生成模型</a></li>
-                            <li><a class="dropdown-item" href="reinforcement.html">强化学习</a></li>
+                            <li><a class="dropdown-item" href="pages/cnn-rnn.html">CNN与RNN</a></li>
+                            <li><a class="dropdown-item" href="pages/generative-models.html">生成模型</a></li>
+                            <li><a class="dropdown-item" href="pages/reinforcement.html">强化学习</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">前沿技术</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="llm-prompt.html">LLM与提示工程</a></li>
-                            <li><a class="dropdown-item" href="ai-agent.html">AI智能体系统</a></li>
+                            <li><a class="dropdown-item" href="pages/llm-prompt.html">LLM与提示工程</a></li>
+                            <li><a class="dropdown-item" href="pages/ai-agent.html">AI智能体系统</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="practice.html">练习题库</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resources.html">学习资源</a></li>
-                    <li class="nav-item"><a class="nav-link" href="my-progress.html">我的进度</a></li>
+                    <li class="nav-item"><a class="nav-link" href="practice/index.html">练习题库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/resources.html">学习资源</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/my-progress.html">我的进度</a></li>
+                    <li class="nav-item ms-2"><a class="btn btn-outline-light btn-sm" href="pages/auth.html">登录/注册</a></li>
                 </ul>
             </div>
         </div>
@@ -84,7 +87,7 @@
                         <span class="hero-badge-text">重庆八中 NOAI 竞赛训练营</span>
                     </div>
                     <h1 class="display-4 fw-bold mb-4">备战 NOAI 2026 人工智能竞赛</h1>
-                    <p class="lead mb-4 text-white">系统学习 AI 知识，掌握 Python、机器学习、��度学习等核心技能，冲刺竞赛好成绩！</p>
+                    <p class="lead mb-4 text-white">系统学习 AI 知识，掌握 Python、机器学习、深度学习等核心技能，冲刺竞赛好成绩！</p>
 
                     <!-- 比赛倒计时 -->
                     <div class="countdown-box">
@@ -113,8 +116,11 @@
                         <a href="#study-plan" class="btn btn-light btn-lg">
                             开始备考 <i class="bi bi-arrow-right ms-2"></i>
                         </a>
-                        <a href="practice.html" class="btn btn-outline-light btn-lg">
-                            模拟测试
+                        <a href="pages/week-quiz.html" class="btn btn-warning btn-lg">
+                            <i class="bi bi-pencil-square me-2"></i>第一周测验
+                        </a>
+                        <a href="practice/index.html" class="btn btn-outline-light btn-lg">
+                            练习题库
                         </a>
                     </div>
                 </div>
@@ -159,7 +165,7 @@
                                 <li><i class="bi bi-check-circle-fill text-success me-2"></i>深度学习基础</li>
                                 <li><i class="bi bi-check-circle-fill text-success me-2"></i>伦理与法律</li>
                             </ul>
-                            <a href="python-basics.html" class="btn btn-outline-primary btn-sm mt-2">开始学习</a>
+                            <a href="pages/python-basics.html" class="btn btn-outline-primary btn-sm mt-2">开始学习</a>
                         </div>
                     </div>
                 </div>
@@ -176,7 +182,7 @@
                                 <li><i class="bi bi-check-circle-fill text-success me-2"></i>生成模型</li>
                                 <li><i class="bi bi-check-circle-fill text-success me-2"></i>深度强化学习</li>
                             </ul>
-                            <a href="cnn-rnn.html" class="btn btn-outline-primary btn-sm mt-2">开始学习</a>
+                            <a href="pages/cnn-rnn.html" class="btn btn-outline-primary btn-sm mt-2">开始学习</a>
                         </div>
                     </div>
                 </div>
@@ -193,7 +199,7 @@
                                 <li><i class="bi bi-check-circle-fill text-success me-2"></i>提示工程与 LLM</li>
                                 <li><i class="bi bi-check-circle-fill text-success me-2"></i>智能体系统设计</li>
                             </ul>
-                            <a href="llm-prompt.html" class="btn btn-outline-primary btn-sm mt-2">开始学习</a>
+                            <a href="pages/llm-prompt.html" class="btn btn-outline-primary btn-sm mt-2">开始学习</a>
                         </div>
                     </div>
                 </div>
@@ -205,87 +211,101 @@
     <section id="study-plan" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">NOAI 备赛学习计划</h2>
-                <p class="lead text-muted">按照官方大纲，科学规划两个月备考路线</p>
+                <h2 class="display-5 fw-bold mb-3">NOAI 备考学习计划</h2>
+                <p class="lead text-muted">每周学习 + 测验，通过后自动解锁下周内容</p>
+                <div class="mt-3">
+                    <span class="badge bg-primary fs-6">当前进度: 第 <span id="currentWeek">1</span> 周</span>
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="timeline">
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-week="1">
                             <div class="timeline-icon bg-primary">
                                 <i class="bi bi-1-circle"></i>
                             </div>
                             <div class="timeline-content">
                                 <span class="badge bg-primary mb-2">第一周</span>
                                 <h4>Python 编程基础</h4>
-                                <p>掌握基本语法、数据类型、控制结构、函数与模块，为后续学习打下坚实基础。</p>
-                                <a href="python-basics.html" class="btn btn-sm btn-primary">开始学习</a>
+                                <p>掌握基本语法、数据类型、控制结构、函数与模块。</p>
+                                <div class="d-flex gap-2 mt-2">
+                                    <a href="pages/python-basics.html" class="btn btn-sm btn-primary">开始学习</a>
+                                    <a href="pages/week-quiz.html" class="btn btn-sm btn-outline-primary">每周测验</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item week-locked" data-week="2">
                             <div class="timeline-icon bg-success">
                                 <i class="bi bi-2-circle"></i>
                             </div>
                             <div class="timeline-content">
                                 <span class="badge bg-success mb-2">第二周</span>
+                                <span class="lock-badge ms-2"><i class="bi bi-lock-fill"></i> 未解锁</span>
                                 <h4>机器学习基础</h4>
                                 <p>学习 scikit-learn 库，掌握监督学习、无监督学习、模型评估等核心概念。</p>
-                                <a href="machine-learning.html" class="btn btn-sm btn-primary">开始学习</a>
+                                <div class="d-flex gap-2 mt-2">
+                                    <a href="pages/machine-learning.html" class="btn btn-sm btn-primary disabled-link">开始学习</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item week-locked" data-week="3">
                             <div class="timeline-icon bg-info">
                                 <i class="bi bi-3-circle"></i>
                             </div>
                             <div class="timeline-content">
                                 <span class="badge bg-info mb-2">第三周</span>
+                                <span class="lock-badge ms-2"><i class="bi bi-lock-fill"></i> 未解锁</span>
                                 <h4>深度学习与神经网络</h4>
                                 <p>学习 PyTorch 框架，理解神经网络原理，掌握前向传播、反向传播。</p>
-                                <a href="neural-networks.html" class="btn btn-sm btn-primary">开始学习</a>
+                                <a href="pages/neural-networks.html" class="btn btn-sm btn-primary disabled-link">开始学习</a>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item week-locked" data-week="4">
                             <div class="timeline-icon bg-warning">
                                 <i class="bi bi-4-circle"></i>
                             </div>
                             <div class="timeline-content">
                                 <span class="badge bg-warning mb-2">第四周</span>
+                                <span class="lock-badge ms-2"><i class="bi bi-lock-fill"></i> 未解锁</span>
                                 <h4>CNN 与 RNN</h4>
                                 <p>深入学习卷积神经网络和循环神经网络，掌握图像识别与序列数据处理。</p>
-                                <a href="cnn-rnn.html" class="btn btn-sm btn-primary">开始学习</a>
+                                <a href="pages/cnn-rnn.html" class="btn btn-sm btn-primary disabled-link">开始学习</a>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item week-locked" data-week="5">
                             <div class="timeline-icon bg-danger">
                                 <i class="bi bi-5-circle"></i>
                             </div>
                             <div class="timeline-content">
                                 <span class="badge bg-danger mb-2">第五周</span>
+                                <span class="lock-badge ms-2"><i class="bi bi-lock-fill"></i> 未解锁</span>
                                 <h4>生成模型与强化学习</h4>
                                 <p>了解 GAN、VAE、扩散模型等生成模型，学习深度强化学习基础。</p>
-                                <a href="generative-models.html" class="btn btn-sm btn-primary">开始学习</a>
+                                <a href="pages/generative-models.html" class="btn btn-sm btn-primary disabled-link">开始学习</a>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item week-locked" data-week="6">
                             <div class="timeline-icon bg-secondary">
                                 <i class="bi bi-6-circle"></i>
                             </div>
                             <div class="timeline-content">
                                 <span class="badge bg-secondary mb-2">第六周</span>
+                                <span class="lock-badge ms-2"><i class="bi bi-lock-fill"></i> 未解锁</span>
                                 <h4>LLM 与提示工程</h4>
                                 <p>学习大语言模型原理，掌握提示工程技巧，了解 AI Agent 智能体系统。</p>
-                                <a href="llm-prompt.html" class="btn btn-sm btn-primary">开始学习</a>
+                                <a href="pages/llm-prompt.html" class="btn btn-sm btn-primary disabled-link">开始学习</a>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item week-locked">
                             <div class="timeline-icon bg-dark">
                                 <i class="bi bi-trophy"></i>
                             </div>
                             <div class="timeline-content">
                                 <span class="badge bg-dark mb-2">最后冲刺</span>
+                                <span class="lock-badge ms-2"><i class="bi bi-lock-fill"></i> 未解锁</span>
                                 <h4>模拟考试与错题复习</h4>
-                                <p>完成历年真题练习，查漏补缺，巩固薄弱知识点。</p>
-                                <a href="practice.html" class="btn btn-sm btn-warning">开始模拟测试</a>
+                                <p>完成所有周测验后解锁，进行历年真题练习，查漏补缺，巩固薄弱知识点。</p>
+                                <a href="practice/index.html" class="btn btn-sm btn-warning disabled-link">开始模拟测试</a>
                             </div>
                         </div>
                     </div>
@@ -307,7 +327,7 @@
                         <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> 模拟考试与计时</li>
                         <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> 错题本与复习</li>
                     </ul>
-                    <a href="practice.html" class="btn btn-primary btn-lg mt-3">
+                    <a href="practice/index.html" class="btn btn-primary btn-lg mt-3">
                         <i class="bi bi-pencil-square"></i> 开始练习
                     </a>
                 </div>
@@ -322,7 +342,7 @@
                                 <div class="progress-value" id="totalProgress">0%</div>
                             </div>
                             <p class="text-muted">完成练习题目，查看你的学习进度和成绩变化</p>
-                            <a href="my-progress.html" class="btn btn-outline-primary">查看进度</a>
+                            <a href="pages/my-progress.html" class="btn btn-outline-primary">查看进度</a>
                         </div>
                     </div>
                 </div>
@@ -348,9 +368,7 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/core.js"></script>
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/progress-tracker.js"></script>
 </body>
 </html>

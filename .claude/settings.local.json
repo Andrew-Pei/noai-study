@@ -9,7 +9,23 @@
       "Bash(git config:*)",
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(for f in *.js)",
+      "Bash(do echo:*)",
+      "Bash(node --check \"$f\")",
+      "Bash(done:*)",
+      "Bash(node:*)",
+      "Bash(for:*)",
+      "Bash(do sed:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test)",
+      "Bash(if exist \"C:\\\\Users\\\\28444\\\\noai-study\\\\students.db\" del \"C:\\\\Users\\\\28444\\\\noai-study\\\\students.db\")",
+      "Bash(if exist \"C:\\\\Users\\\\28444\\\\noai-study\\\\server\\\\students.db\" del \"C:\\\\Users\\\\28444\\\\noai-study\\\\server\\\\students.db\")",
+      "Bash(npm start)",
+      "Bash(curl:*)"
     ]
   }
 }

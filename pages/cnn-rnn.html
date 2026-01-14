@@ -7,9 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/content.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
 <body data-page="cnn-rnn">
     <div id="loadingOverlay" class="loading-overlay"><div class="loading-spinner"></div></div>
@@ -17,7 +16,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/images/logo.png" alt="NOAI Logo" height="32" class="me-2"> 
                 NOAI 竞赛学习平台
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,7 +25,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="basicsDropdown" role="button" data-bs-toggle="dropdown">AI基础</a>
                         <ul class="dropdown-menu">
@@ -56,7 +56,7 @@
                             <li><a class="dropdown-item" href="ai-agent.html">AI智能体系统</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="practice.html">练习题库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../practice/index.html">练习题库</a></li>
                     <li class="nav-item"><a class="nav-link" href="resources.html">学习资源</a></li>
                     <li class="nav-item"><a class="nav-link" href="my-progress.html">我的进度</a></li>
                 </ul>
@@ -87,7 +87,7 @@
     <div class="container py-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                <li class="breadcrumb-item"><a href="../index.html">首页</a></li>
                 <li class="breadcrumb-item">深度学习</li>
                 <li class="breadcrumb-item active" aria-current="page">CNN与RNN</li>
             </ol>
@@ -536,9 +536,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/progress-tracker.js"></script>
-    <script src="js/cnn-rnn.js"></script>
+<script src="../assets/js/core.js"></script>
+    <script src="../assets/js/cnn-rnn.js"></script>
 </body>
 </html>
