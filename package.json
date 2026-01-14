@@ -1,0 +1,31 @@
+{
+  "name": "ai-learning-center",
+  "version": "1.1.0",
+  "description": "专为中学生设计的人工智能学习网站",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo '打开 start.html 文件开始使用'",
+    "test": "echo '运行测试文件: test.html'"
+  },
+  "keywords": [
+    "人工智能",
+    "机器学习",
+    "神经网络",
+    "AI教育",
+    "中学生",
+    "编程学习",
+    "互动教学"
+  ],
+  "author": "AI学习中心",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-study"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ai-study/issues"
+  },
+  "homepage": "https://github.com/your-username/ai-study#readme",
+  "devDependencies": {},
+  "dependencies": {}
+}

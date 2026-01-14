@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 编程基础 - 重庆八中 NOAI 竞赛</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body data-page="python-basics">
+    <!-- 页面加载指示器 -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                NOAI 竞赛学习平台
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="basicsDropdown" role="button" data-bs-toggle="dropdown">AI基础</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="basics.html">AI基础概念</a></li>
+                            <li><a class="dropdown-item active" href="python-basics.html">Python编程</a></li>
+                            <li><a class="dropdown-item" href="ethics.html">AI伦理法律</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mlDropdown" role="button" data-bs-toggle="dropdown">机器学习</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="machine-learning.html">机器学习基础</a></li>
+                            <li><a class="dropdown-item" href="neural-networks.html">神经网络基础</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dlDropdown" role="button" data-bs-toggle="dropdown">深度学习</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cnn-rnn.html">CNN与RNN</a></li>
+                            <li><a class="dropdown-item" href="generative-models.html">生成模型</a></li>
+                            <li><a class="dropdown-item" href="reinforcement.html">强化学习</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="advancedDropdown" role="button" data-bs-toggle="dropdown">前沿技术</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="llm-prompt.html">LLM与提示工程</a></li>
+                            <li><a class="dropdown-item" href="ai-agent.html">AI智能体系统</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="practice.html">练习题库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">学习资源</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my-progress.html">我的进度</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header page-header-python bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="page-icon mb-3">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-3">Python 编程基础</h1>
+                    <p class="lead mb-0">NOAI 竞赛必备 - 掌握 Python 基本语法、数据结构、函数与模块</p>
+                    <div class="mt-3">
+                        <span class="badge bg-light text-primary">NOAI 考点占比: 约 10%</span>
+                        <span class="badge bg-warning text-dark">建议学习时间: 1 周</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                <li class="breadcrumb-item">AI基础</li>
+                <li class="breadcrumb-item active" aria-current="page">Python编程基础</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="sidebar-card sticky-top">
+                        <h5 class="sidebar-title">目录</h5>
+                        <div class="list-group list-group-flush">
+                            <a href="#intro" class="list-group-item list-group-item-action">Python 简介</a>
+                            <a href="#basics" class="list-group-item list-group-item-action">基本语法</a>
+                            <a href="#datatypes" class="list-group-item list-group-item-action">数据类型</a>
+                            <a href="#control" class="list-group-item list-group-item-action">控制结构</a>
+                            <a href="#functions" class="list-group-item list-group-item-action">函数与模块</a>
+                            <a href="#fileio" class="list-group-item list-group-item-action">文件操作</a>
+                            <a href="#exception" class="list-group-item list-group-item-action">异常处理</a>
+                            <a href="#numpy" class="list-group-item list-group-item-action">NumPy 基础</a>
+                            <a href="#pandas" class="list-group-item list-group-item-action">Pandas 基础</a>
+                            <a href="#quiz" class="list-group-item list-group-item-action">练习题</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="col-lg-9">
+                    <!-- Python 简介 -->
+                    <section id="intro" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-question-circle text-primary me-2"></i>
+                            什么是 Python？
+                        </h2>
+                        <div class="content-card">
+                            <p>Python 是一种简单易学、功能强大的编程语言，是人工智能和数据分析领域最流行的语言之一。</p>
+                            <div class="row g-4 mt-3">
+                                <div class="col-md-4">
+                                    <div class="feature-box">
+                                        <i class="bi bi-lightning-charge text-warning"></i>
+                                        <h5>简单易学</h5>
+                                        <p class="small">语法简洁清晰，适合初学者入门</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-box">
+                                        <i class="bi bi-puzzle text-success"></i>
+                                        <h5>功能丰富</h5>
+                                        <p class="small">拥有强大的标准库和第三方库</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-box">
+                                        <i class="bi bi-globe text-info"></i>
+                                        <h5>应用广泛</h5>
+                                        <p class="small">AI、数据分析、Web开发等领域</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 基本语法 -->
+                    <section id="basics" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-terminal text-primary me-2"></i>
+                            基本语法
+                        </h2>
+                        <div class="content-card">
+                            <h4>变量与赋值</h4>
+                            <p>Python 是动态类型语言，不需要声明变量类型：</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 变量赋值
+name = "张三"
+age = 15
+height = 1.72
+is_student = True
+
+print(f"姓名: {name}, 年龄: {age}")
+print(f"身高: {height}米")
+print(f"是学生: {is_student}")</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">注释</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 这是单行注释
+
+'''
+这是多行注释
+可以写多行
+'''
+
+# 快捷键：Ctrl + / (Windows) 或 Cmd + / (Mac)</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">输入输出</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 输入
+name = input("请输入你的姓名: ")
+age = int(input("请输入你的年龄: "))
+
+# 输出
+print(f"你好, {name}!")
+print("明年你", age + 1, "岁")</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 数据类型 -->
+                    <section id="datatypes" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-diagram-3 text-primary me-2"></i>
+                            数据类型
+                        </h2>
+                        <div class="content-card">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>类型</th>
+                                            <th>说明</th>
+                                            <th>示例</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>int</code></td>
+                                            <td>整数</td>
+                                            <td><code>42, -10, 0</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>float</code></td>
+                                            <td>浮点数</td>
+                                            <td><code>3.14, -0.5, 2.0</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>str</code></td>
+                                            <td>字符串</td>
+                                            <td><code>"Hello", 'Python'</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>bool</code></td>
+                                            <td>布尔值</td>
+                                            <td><code>True, False</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>list</code></td>
+                                            <td>列表</td>
+                                            <td><code>[1, 2, 3]</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>tuple</code></td>
+                                            <td>元组</td>
+                                            <td><code>(1, 2, 3)</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>dict</code></td>
+                                            <td>字典</td>
+                                            <td><code>{"key": "value"}</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>set</code></td>
+                                            <td>集合</td>
+                                            <td><code>{1, 2, 3}</code></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h4 class="mt-4">列表操作</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 创建列表
+numbers = [1, 2, 3, 4, 5]
+fruits = ["苹果", "香蕉", "橙子"]
+
+# 访问元素（索引从0开始）
+print(numbers[0])    # 输出: 1
+print(fruits[-1])    # 输出最后一个: 橙子
+
+# 切片
+print(numbers[1:4])  # 输出: [2, 3, 4]
+print(numbers[:3])   # 输出: [1, 2, 3]
+
+# 常用方法
+numbers.append(6)        # 添加元素
+numbers.insert(0, 0)     # 在指定位置插入
+numbers.remove(3)        # 删除指定值
+numbers.pop()            # 删除最后一个
+len(numbers)             # 获取长度
+3 in numbers             # 检查元素是否存在</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">字典操作</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 创建字典
+student = {
+    "name": "张三",
+    "age": 15,
+    "grade": "初三"
+}
+
+# 访问值
+print(student["name"])      # 输出: 张三
+print(student.get("age"))   # 输出: 15
+
+# 添加/修改
+student["school"] = "重庆八中"
+student["age"] = 16
+
+# 删除
+del student["grade"]
+
+# 遍历
+for key, value in student.items():
+    print(f"{key}: {value}")</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 控制结构 -->
+                    <section id="control" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-flowchart text-primary me-2"></i>
+                            控制结构
+                        </h2>
+                        <div class="content-card">
+                            <h4>条件语句</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># if 语句
+score = 85
+
+if score >= 90:
+    print("优秀")
+elif score >= 80:
+    print("良好")
+elif score >= 60:
+    print("及格")
+else:
+    print "不及格")
+
+# 三元运算符
+result = "及格" if score >= 60 else "不及格"</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">循环语句</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># for 循环
+for i in range(5):        # 0, 1, 2, 3, 4
+    print(i)
+
+for i in range(1, 6):     # 1, 2, 3, 4, 5
+    print(i)
+
+# 遍历列表
+fruits = ["苹果", "香蕉", "橙子"]
+for fruit in fruits:
+    print(fruit)
+
+# while 循环
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# 列表推导式
+squares = [x**2 for x in range(5)]  # [0, 1, 4, 9, 16]</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 函数与模块 -->
+                    <section id="functions" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-box text-primary me-2"></i>
+                            函数与模块
+                        </h2>
+                        <div class="content-card">
+                            <h4>定义函数</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 定义函数
+def greet(name):
+    return f"你好, {name}!"
+
+# 调用函数
+message = greet("张三")
+print(message)  # 输出: 你好, 张三!
+
+# 默认参数
+def greet(name, greeting="你好"):
+    return f"{greeting}, {name}!"
+
+# 可变参数
+def sum_all(*numbers):
+    return sum(numbers)
+
+print(sum_all(1, 2, 3, 4))  # 输出: 10</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">导入模块</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 导入整个模块
+import math
+print(math.sqrt(16))  # 4.0
+print(math.pi)        # 3.14159...
+
+# 导入特定函数
+from math import sqrt, pi
+print(sqrt(25))       # 5.0
+
+# 给模块起别名
+import numpy as np
+import pandas as pd</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 文件操作 -->
+                    <section id="fileio" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-file-earmark text-primary me-2"></i>
+                            文件操作
+                        </h2>
+                        <div class="content-card">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 读取文件
+with open("data.txt", "r", encoding="utf-8") as f:
+    content = f.read()       # 读取全部内容
+    lines = f.readlines()    # 读取所有行
+
+# 写入文件
+with open("output.txt", "w", encoding="utf-8") as f:
+    f.write("Hello, World!\n")
+
+# 追加写入
+with open("output.txt", "a", encoding="utf-8") as f:
+    f.write("新的内容\n")
+
+# 逐行读取
+with open("data.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        line = line.strip()  # 去除首尾空白
+        print(line)</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 异常处理 -->
+                    <section id="exception" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-exclamation-triangle text-primary me-2"></i>
+                            异常处理
+                        </h2>
+                        <div class="content-card">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python"># 基本异常处理
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("除数不能为零")
+
+# 捕获多种异常
+try:
+    number = int(input("请输入一个数字: "))
+    result = 100 / number
+    print(f"结果是: {result}")
+except ValueError:
+    print("请输入有效的数字")
+except ZeroDivisionError:
+    print("除数不能为零")
+except Exception as e:
+    print(f"发生错误: {e}")
+finally:
+    print("程序执行完毕")</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- NumPy 基础 -->
+                    <section id="numpy" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-grid text-primary me-2"></i>
+                            NumPy 基础
+                        </h2>
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle me-2"></i>
+                            NumPy 是 Python 中用于科学计算的核心库，是 Pandas、TensorFlow、PyTorch 等库的基础。
+                        </div>
+                        <div class="content-card">
+                            <h4>创建数组</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python">import numpy as np
+
+# 创建数组
+arr1 = np.array([1, 2, 3, 4, 5])
+arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+
+# 特殊数组
+zeros = np.zeros((3, 4))      # 全零数组
+ones = np.ones((2, 3))        # 全一数组
+random = np.random.rand(3, 3) # 随机数组
+range_arr = np.arange(0, 10, 2)  # [0, 2, 4, 6, 8]
+
+# 数组属性
+print(arr1.shape)    # 形状
+print(arr1.dtype)    # 数据类型
+print(arr1.size)     # 元素个数</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">数组运算</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python">import numpy as np
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+# 基本运算（元素级）
+print(a + b)   # [5, 7, 9]
+print(a * b)   # [4, 10, 18]
+print(a ** 2)  # [1, 4, 9]
+
+# 统计函数
+print(np.mean(a))    # 平均值: 2.0
+print(np.sum(a))     # 求和: 6
+print(np.max(a))     # 最大值: 3
+print(np.min(a))     # 最小值: 1
+print(np.std(a))     # 标准差</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">数组索引与切片</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python">import numpy as np
+
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# 索引
+print(arr[0, 0])    # 1
+print(arr[1, 2])    # 6
+
+# 切片
+print(arr[0, :])    # 第一行: [1, 2, 3]
+print(arr[:, 0])    # 第一列: [1, 4, 7]
+print(arr[:2, :2])  # 前两行前两列
+
+# 布尔索引
+mask = arr > 5
+print(arr[mask])    # [6, 7, 8, 9]</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pandas 基础 -->
+                    <section id="pandas" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-table text-primary me-2"></i>
+                            Pandas 基础
+                        </h2>
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle me-2"></i>
+                            Pandas 是 Python 中用于数据分析的核心库，特别适合处理表格数据。
+                        </div>
+                        <div class="content-card">
+                            <h4>创建 DataFrame</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python">import pandas as pd
+
+# 从字典创建
+data = {
+    "姓名": ["张三", "李四", "王五"],
+    "年龄": [15, 16, 15],
+    "成绩": [85, 92, 88]
+}
+df = pd.DataFrame(data)
+
+# 从 CSV 文件读取
+# df = pd.read_csv("data.csv")
+
+# 查看 DataFrame
+print(df.head())      # 前5行
+print(df.info())      # 数据信息
+print(df.describe())  # 统计摘要</code></pre>
+                            </div>
+
+                            <h4 class="mt-4">数据操作</h4>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="bi bi-clipboard"></i></button>
+                                </div>
+                                <pre><code class="language-python">import pandas as pd
+
+# 选择数据
+print(df["姓名"])        # 选择列
+print(df[0:2])          # 选择行
+print(df.loc[0])        # 按标签选择
+print(df.iloc[0])       # 按位置选择
+
+# 过滤数据
+high_score = df[df["成绩"] >= 90]
+
+# 排序
+df_sorted = df.sort_values("成绩", ascending=False)
+
+# 添加列
+df["总分"] = df["成绩"] + 5
+
+# 分组
+grouped = df.groupby("年龄").mean()
+
+# 保存到 CSV
+df.to_csv("output.csv", index=False, encoding="utf-8")</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 练习题 -->
+                    <section id="quiz" class="content-section">
+                        <h2 class="section-title">
+                            <i class="bi bi-patch-question text-primary me-2"></i>
+                            练习题
+                        </h2>
+                        <div class="content-card">
+                            <div class="quiz-container" id="pythonQuiz">
+                                <!-- 题目会通过 JS 动态加载 -->
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="checkPythonQuiz()">
+                                <i class="bi bi-check-circle"></i> 提交答案
+                            </button>
+                            <div id="quizResult" class="mt-3" style="display: none;"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-text mb-0">© 2026 重庆市第八中学校 | NOAI 竞赛学习平台</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="cnn-rnn.html" class="footer-link">下一章: CNN与RNN <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/progress-tracker.js"></script>
+    <script src="js/python-basics.js"></script>
+</body>
+</html>

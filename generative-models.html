@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成模型 - 重庆八中 NOAI 竞赛</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body data-page="generative-models">
+    <div id="loadingOverlay" class="loading-overlay"><div class="loading-spinner"></div></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                NOAI 竞赛学习平台
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">AI基础</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="basics.html">AI基础概念</a></li><li><a class="dropdown-item" href="python-basics.html">Python编程</a></li><li><a class="dropdown-item" href="ethics.html">AI伦理法律</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">机器学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="machine-learning.html">机器学习基础</a></li><li><a class="dropdown-item" href="neural-networks.html">神经网络基础</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">深度学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="cnn-rnn.html">CNN与RNN</a></li><li><a class="dropdown-item active" href="generative-models.html">生成模型</a></li><li><a class="dropdown-item" href="reinforcement.html">强化学习</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">前沿技术</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="llm-prompt.html">LLM与提示工程</a></li><li><a class="dropdown-item" href="ai-agent.html">AI���能体系统</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link" href="practice.html">练习题库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">学习资源</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my-progress.html">我的进度</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header page-header-gen text-white py-5">
+        <div class="container">
+            <div class="row"><div class="col-lg-8 mx-auto text-center">
+                <div class="page-icon mb-3"><i class="bi bi-magic"></i></div>
+                <h1 class="display-4 fw-bold mb-3">生成模型</h1>
+                <p class="lead mb-0">GAN、VAE、扩散模型 - 让 AI 创造新内容</p>
+                <div class="mt-3"><span class="badge bg-light text-primary">NOAI 考点占比: 约 10%</span></div>
+            </div></div>
+        </div>
+    </header>
+
+    <div class="container py-3"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">首页</a></li><li class="breadcrumb-item">深度学习</li><li class="breadcrumb-item active">生成模型</li></ol></nav></div>
+
+    <main class="py-5"><div class="container"><div class="row">
+        <div class="col-lg-3 mb-4"><div class="sidebar-card sticky-top"><h5 class="sidebar-title">目录</h5><div class="list-group list-group-flush"><a href="#intro" class="list-group-item list-group-item-action">生成模型简介</a><a href="#gan" class="list-group-item list-group-item-action">GAN</a><a href="#vae" class="list-group-item list-group-item-action">VAE</a><a href="#diffusion" class="list-group-item list-group-item-action">扩散模型</a><a href="#aigc" class="list-group-item list-group-item-action">AIGC 应用</a><a href="#quiz" class="list-group-item list-group-item-action">练习题</a></div></div></div>
+        <div class="col-lg-9">
+            <section id="intro" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-lightbulb text-primary me-2"></i>生成模型简介</h2><div class="content-card"><div class="alert alert-info"><i class="bi bi-info-circle me-2"></i><strong>生成模型</strong>是一类能够生成新数据的机器学习模型，与用于分类/预测的判别模型相对。</div><h4>生成 vs 判别</h4><div class="row g-3"><div class="col-md-6"><div class="compare-card"><h5>判别模型</h5><p class="small">区分不同类别的数据</p><p class="example">这是猫还是狗？</p></div></div><div class="col-md-6"><div class="compare-card gen-card"><h5>生成模型</h5><p class="small">创造新的数据样本</p><p class="example">生成一张猫的图片</p></div></div></div></div></section>
+
+            <section id="gan" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-lightning text-primary me-2"></i>GAN (生成对抗网络)</h2><div class="content-card"><p>GAN 由生成器和判别器组成，两者相互对抗训练。</p><div class="gan-diagram"><div class="gan-box gen"><h6>生成器 G</h6><p>生成假数据</p></div><div class="gan-arrow"><i class="bi bi-arrow-left-right"></i></div><div class="gan-box disc"><h6>判别器 D</h6><p>判断真假</p></div></div><h5 class="mt-4">经典 GAN 变体</h5><ul><li><strong>DCGAN</strong>: 使用卷积网络处理图像</li><li><strong>StyleGAN</strong>: 生成高质量人脸图像</li><li><strong>CycleGAN</strong>: 图像风格转换</li></ul></div></section>
+
+            <section id="vae" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-box text-primary me-2"></i>VAE (变分自编码器)</h2><div class="content-card"><p>VAE 通过编码器-解码器结构学习数据的潜在表示。</p><div class="vae-diagram"><div class="vae-step">输入</div><i class="bi bi-arrow-right"></i><div class="vae-step">编码器</div><i class="bi bi-arrow-right"></i><div class="vae-step latent">潜在向量 z</div><i class="bi bi-arrow-right"></i><div class="vae-step">解码器</div><i class="bi bi-arrow-right"></i><div class="vae-step">输出</div></div></div></section>
+
+            <section id="diffusion" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-water text-primary me-2"></i>扩散模型</h2><div class="content-card"><div class="alert alert-success"><i class="bi bi-trophy me-2"></i>扩散模型是当前最先进的生成模型，Stable Diffusion、DALL-E 等都基于此。</div><h5>工作原理</h5><ol><li><strong>前向过程</strong>: 逐步添加噪声，直到图像变成纯噪声</li><li><strong>反向过程</strong>: 学习从噪声中逐步恢复图像</li></ol></div></section>
+
+            <section id="aigc" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-palette text-primary me-2"></i>AIGC 应用</h2><div class="content-card"><div class="row g-3"><div class="col-md-4"><div class="aigc-card"><i class="bi bi-image"></i><h6>图像生成</h6><p>Midjourney, Stable Diffusion</p></div></div><div class="col-md-4"><div class="aigc-card"><i class="bi bi-camera-video"></i><h6>视频生成</h6><p>Sora, Runway</p></div></div><div class="col-md-4"><div class="aigc-card"><i class="bi bi-music-note"></i><h6>音频生成</h6><p>Suno, Udio</p></div></div></div></div></section>
+
+            <section id="quiz" class="content-section"><h2 class="section-title"><i class="bi bi-patch-question text-primary me-2"></i>练习题</h2><div class="content-card"><div class="quiz-container" id="genQuiz"></div><button class="btn btn-primary mt-3" onclick="checkGenQuiz()"><i class="bi bi-check-circle"></i> 提交答案</button><div id="quizResult" class="mt-3" style="display:none;"></div></div></section>
+        </div>
+    </div></div></main>
+
+    <footer class="footer"><div class="container"><div class="row align-items-center"><div class="col-md-6"><p class="footer-text mb-0">© 2026 重庆市第八中学校 | NOAI 竞赛学习平台</p></div><div class="col-md-6 text-md-end"><a href="reinforcement.html" class="footer-link">下一章: 强化学习 <i class="bi bi-arrow-right"></i></a></div></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script src="js/main.js"></script><script src="js/countdown.js"></script><script src="js/progress-tracker.js"></script><script src="js/generative-models.js"></script>
+</body>
+</html>

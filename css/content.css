@@ -1,0 +1,589 @@
+/* 内容页面专用样式 */
+
+/* 页面头部 */
+.page-header {
+    background: #1e3c72;
+    padding: 60px 0 40px;
+    margin-top: 76px;
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: var(--gray-color);
+}
+
+/* 侧边栏 */
+.sidebar-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 20px;
+}
+
+.sidebar-title {
+    color: #4361ee;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px 15px;
+    color: #212529;
+    transition: background-color 0.2s;
+}
+
+.list-group-item:hover,
+.list-group-item.active {
+    background-color: #e9ecef;
+    color: #4361ee;
+    border-left: 3px solid #4361ee;
+}
+
+.tip-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: #e7f3ff;
+    border-radius: 8px;
+}
+
+.tip-content i {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* 内容区域 */
+.content-section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    color: #4361ee;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.content-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 关键点列表 */
+.key-points ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-points li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.key-points li:last-child {
+    border-bottom: none;
+}
+
+.key-points li strong {
+    color: var(--primary-color);
+}
+
+/* 概念可视化 */
+.concept-visual {
+    padding: 15px;
+    background: #e7f3ff;
+    border-radius: 8px;
+    border: 1px dashed #4361ee;
+}
+
+/* 简单时间线 */
+.timeline-simple {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-simple::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e9ecef;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: #4361ee;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.timeline-content {
+    margin-left: 35px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #4361ee;
+}
+
+.timeline-content h5 {
+    color: #4361ee;
+    margin-bottom: 8px;
+}
+
+/* 类型卡片 */
+.type-card {
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.type-card:hover {
+    transform: translateY(-3px);
+}
+
+.type-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+/* 应用卡片 */
+.app-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.app-card:hover {
+    transform: translateY(-2px);
+}
+
+.app-icon {
+    width: 45px;
+    height: 45px;
+    background: #4361ee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.app-content h5 {
+    color: #4361ee;
+    margin-bottom: 5px;
+}
+
+/* 手风琴样式 */
+.accordion-item {
+    border: none;
+    margin-bottom: 8px;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: #e7f3ff;
+    color: #4361ee;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #4361ee;
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.accordion-body {
+    background: #f8f9fa;
+    border-radius: 0 0 8px 8px;
+}
+
+/* 测验样式 */
+.quiz-container {
+    padding: 20px;
+}
+
+.quiz-question {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.quiz-question h5 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.quiz-options .form-check {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.quiz-options .form-check:hover {
+    background: rgba(67, 97, 238, 0.05);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 60px 0 40px;
+        text-align: center;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .timeline-simple {
+        padding-left: 20px;
+    }
+    
+    .timeline-year {
+        width: 50px;
+        height: 50px;
+        left: -25px;
+        font-size: 0.8rem;
+    }
+    
+    .timeline-content {
+        margin-left: 30px;
+    }
+    
+    .app-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .app-icon {
+        margin: 0 auto;
+    }
+}
+
+/* 神经网络页面样式 */
+.neuron-visual {
+    padding: 20px;
+    background: #e7f3ff;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.neuron-diagram {
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.neuron-cell {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.cell-body {
+    width: 60px;
+    height: 60px;
+    background: #0dcaf0;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.dendrites {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dendrite {
+    width: 30px;
+    height: 3px;
+    background: var(--info-color);
+    margin-bottom: 8px;
+    border-radius: 2px;
+}
+
+.dendrite:last-child {
+    margin-bottom: 0;
+}
+
+.axon {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.axon-terminal {
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+.nn-component {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.nn-component:hover {
+    transform: translateY(-3px);
+}
+
+.component-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.nn-component h5 {
+    color: #4361ee;
+    margin-bottom: 8px;
+}
+
+.nn-process {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 伦理页面样式 */
+.ethics-challenges {
+    margin: 15px 0;
+}
+
+.challenge-card {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.challenge-card:hover {
+    transform: translateY(-2px);
+}
+
+.challenge-icon {
+    width: 45px;
+    height: 45px;
+    background: #6c757d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.challenge-card h5 {
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.ethics-principles {
+    margin: 15px 0;
+}
+
+.principle-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+}
+
+.principle-item:hover {
+    transform: translateX(3px);
+}
+
+.principle-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.principle-content h5 {
+    color: #4361ee;
+    margin-bottom: 5px;
+}
+
+.future-trends {
+    margin: 15px 0;
+}
+
+.trend-card {
+    padding: 15px;
+    background: #e7f3ff;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 3px solid #4361ee;
+    transition: transform 0.2s;
+}
+
+.trend-card:hover {
+    background: #d0e7ff;
+    transform: translateX(5px);
+}
+
+.trend-card h5 {
+    color: #4361ee;
+    margin-bottom: 8px;
+}
+
+.ethical-thinking {
+    margin: 15px 0;
+}
+
+.thinking-questions {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.question-item {
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 3px solid #3a0ca3;
+}
+
+.question-item:last-child {
+    margin-bottom: 0;
+}
+
+.question-item h5 {
+    color: #3a0ca3;
+    margin-bottom: 8px;
+}
+
+/* 打印样式 */
+@media print {
+    .navbar, .sidebar-card, footer, .breadcrumb {
+        display: none !important;
+    }
+    
+    .page-header {
+        margin-top: 0;
+        padding: 20px 0;
+    }
+    
+    .content-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

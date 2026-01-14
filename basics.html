@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI基础知识 - AI学习中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-robot"></i> AI学习中心
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="basics.html">AI基础</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="machine-learning.html">机器学习</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="neural-networks.html">神经网络</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ethics.html">AI伦理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interactive.html">互动学习</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">学习资源</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">AI基础知识</h1>
+                    <p class="lead mb-0">了解人工智能的基本概念、历史发展和应用场景</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                <li class="breadcrumb-item active" aria-current="page">AI基础知识</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="sidebar-card">
+                        <h5 class="sidebar-title">目录</h5>
+                        <div class="list-group list-group-flush">
+                            <a href="#what-is-ai" class="list-group-item list-group-item-action">什么是人工智能</a>
+                            <a href="#ai-history" class="list-group-item list-group-item-action">AI发展历史</a>
+                            <a href="#ai-types" class="list-group-item list-group-item-action">AI的类型</a>
+                            <a href="#ai-applications" class="list-group-item list-group-item-action">AI应用场景</a>
+                            <a href="#key-concepts" class="list-group-item list-group-item-action">关键概念</a>
+                            <a href="#quiz" class="list-group-item list-group-item-action">知识测验</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card mt-4">
+                        <h5 class="sidebar-title">学习提示</h5>
+                        <div class="tip-content">
+                            <i class="bi bi-lightbulb text-warning"></i>
+                            <p class="mb-0 small">尝试用自己的话解释每个概念，这样能加深理解。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="col-lg-9">
+                    <!-- What is AI -->
+                    <section id="what-is-ai" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-question-circle text-primary me-2"></i>
+                            什么是人工智能？
+                        </h2>
+                        <div class="content-card">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <p>人工智能（Artificial Intelligence，简称AI）是计算机科学的一个分支，它研究如何让计算机模拟人类的智能行为。</p>
+                                    <p>简单来说，AI就是让机器能够像人一样思考、学习、解决问题和做出决策。</p>
+                                    <div class="key-points">
+                                        <h5 class="mt-4 mb-3">核心特点：</h5>
+                                        <ul>
+                                            <li><strong>学习能力：</strong>从数据中学习并改进</li>
+                                            <li><strong>推理能力：</strong>根据已有信息进行逻辑推理</li>
+                                            <li><strong>感知能力：</strong>理解图像、声音、文字等信息</li>
+                                            <li><strong>交互能力：</strong>与人类进行自然交流</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="concept-visual">
+                                        <i class="bi bi-cpu display-1 text-primary"></i>
+                                        <p class="mt-3 small">计算机 + 智能 = 人工智能</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- AI History -->
+                    <section id="ai-history" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-clock-history text-primary me-2"></i>
+                            AI发展历史
+                        </h2>
+                        <div class="content-card">
+                            <div class="timeline-simple">
+                                <div class="timeline-item">
+                                    <div class="timeline-year">1956</div>
+                                    <div class="timeline-content">
+                                        <h5>AI诞生</h5>
+                                        <p>达特茅斯会议首次提出"人工智能"概念，标志着AI作为独立学科的诞生。</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-year">1997</div>
+                                    <div class="timeline-content">
+                                        <h5>深蓝战胜卡斯帕罗夫</h5>
+                                        <p>IBM的深蓝计算机击败国际象棋世界冠军，展示了AI的强大计算能力。</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2012</div>
+                                    <div class="timeline-content">
+                                        <h5>深度学习突破</h5>
+                                        <p>AlexNet在ImageNet竞赛中取得突破性成绩，开启了深度学习时代。</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2016</div>
+                                    <div class="timeline-content">
+                                        <h5>AlphaGo战胜李世石</h5>
+                                        <p>DeepMind的AlphaGo击败围棋世界冠军，展示了AI在复杂决策中的能力。</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-year">现在</div>
+                                    <div class="timeline-content">
+                                        <h5>AI普及应用</h5>
+                                        <p>AI技术广泛应用于各个领域，成为推动社会进步的重要力量。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- AI Types -->
+                    <section id="ai-types" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-diagram-3 text-primary me-2"></i>
+                            AI的类型
+                        </h2>
+                        <div class="content-card">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="type-card">
+                                        <div class="type-icon bg-primary">
+                                            <i class="bi bi-cpu"></i>
+                                        </div>
+                                        <h5>弱人工智能</h5>
+                                        <p class="small">专注于特定任务的AI，如语音助手、推荐系统。这是目前最常见的AI类型。</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="type-card">
+                                        <div class="type-icon bg-success">
+                                            <i class="bi bi-brain"></i>
+                                        </div>
+                                        <h5>强人工智能</h5>
+                                        <p class="small">具有与人类相当或超越人类智能的AI，能够理解、学习和执行任何智力任务。</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="type-card">
+                                        <div class="type-icon bg-warning">
+                                            <i class="bi bi-stars"></i>
+                                        </div>
+                                        <h5>超人工智能</h5>
+                                        <p class="small">在所有领域都远超人类智能的AI，这是AI发展的未来目标。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- AI Applications -->
+                    <section id="ai-applications" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-grid-3x3-gap text-primary me-2"></i>
+                            AI应用场景
+                        </h2>
+                        <div class="content-card">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="app-card">
+                                        <div class="app-icon">
+                                            <i class="bi bi-chat-left-text"></i>
+                                        </div>
+                                        <div class="app-content">
+                                            <h5>智能助手</h5>
+                                            <p class="small">如Siri、小爱同学等，能够理解语音指令并执行任务。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="app-card">
+                                        <div class="app-icon">
+                                            <i class="bi bi-camera"></i>
+                                        </div>
+                                        <div class="app-content">
+                                            <h5>图像识别</h5>
+                                            <p class="small">人脸识别、物体检测、医学影像分析等。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="app-card">
+                                        <div class="app-icon">
+                                            <i class="bi bi-car-front"></i>
+                                        </div>
+                                        <div class="app-content">
+                                            <h5>自动驾驶</h5>
+                                            <p class="small">汽车通过传感器和AI算法实现自主驾驶。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="app-card">
+                                        <div class="app-icon">
+                                            <i class="bi bi-shop"></i>
+                                        </div>
+                                        <div class="app-content">
+                                            <h5>推荐系统</h5>
+                                            <p class="small">电商平台、视频网站根据用户喜好推荐内容。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="app-card">
+                                        <div class="app-icon">
+                                            <i class="bi bi-heart-pulse"></i>
+                                        </div>
+                                        <div class="app-content">
+                                            <h5>医疗诊断</h5>
+                                            <p class="small">辅助医生进行疾病诊断和治疗方案制定。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="app-card">
+                                        <div class="app-icon">
+                                            <i class="bi bi-translate"></i>
+                                        </div>
+                                        <div class="app-content">
+                                            <h5>机器翻译</h5>
+                                            <p class="small">实时翻译不同语言，打破语言障碍。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Key Concepts -->
+                    <section id="key-concepts" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-book text-primary me-2"></i>
+                            关键概念
+                        </h2>
+                        <div class="content-card">
+                            <div class="accordion" id="conceptsAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#concept1">
+                                            算法
+                                        </button>
+                                    </h2>
+                                    <div id="concept1" class="accordion-collapse collapse show" data-bs-parent="#conceptsAccordion">
+                                        <div class="accordion-body">
+                                            <p>算法是一系列解决问题的明确指令。在AI中，算法告诉计算机如何处理数据和学习。</p>
+                                            <p class="mb-0"><strong>例子：</strong>排序算法、搜索算法、机器学习算法。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept2">
+                                            数据
+                                        </button>
+                                    </h2>
+                                    <div id="concept2" class="accordion-collapse collapse" data-bs-parent="#conceptsAccordion">
+                                        <div class="accordion-body">
+                                            <p>数据是AI的"食物"。AI通过分析大量数据来学习和改进。</p>
+                                            <p class="mb-0"><strong>类型：</strong>文本数据、图像数据、音频数据、视频数据。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept3">
+                                            模型
+                                        </button>
+                                    </h2>
+                                    <div id="concept3" class="accordion-collapse collapse" data-bs-parent="#conceptsAccordion">
+                                        <div class="accordion-body">
+                                            <p>模型是AI从数据中学到的"知识"的表示。它能够根据输入做出预测或决策。</p>
+                                            <p class="mb-0"><strong>比喻：</strong>就像学生通过学习课本知识后形成的理解。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept4">
+                                            训练
+                                        </button>
+                                    </h2>
+                                    <div id="concept4" class="accordion-collapse collapse" data-bs-parent="#conceptsAccordion">
+                                        <div class="accordion-body">
+                                            <p>训练是让AI模型从数据中学习的过程。通过调整模型参数，使其能够更好地完成任务。</p>
+                                            <p class="mb-0"><strong>比喻：</strong>就像学生通过做题来掌握知识。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Quiz -->
+                    <section id="quiz" class="content-section">
+                        <h2 class="section-title">
+                            <i class="bi bi-patch-question text-primary me-2"></i>
+                            知识测验
+                        </h2>
+                        <div class="content-card">
+                            <div class="quiz-container">
+                                <div class="quiz-question">
+                                    <h5>问题1：人工智能的主要目标是什么？</h5>
+                                    <div class="quiz-options">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" id="q1a">
+                                            <label class="form-check-label" for="q1a">
+                                                A. 让计算机执行重复性任务
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" id="q1b">
+                                            <label class="form-check-label" for="q1b">
+                                                B. 让计算机模拟人类智能行为
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" id="q1c">
+                                            <label class="form-check-label" for="q1c">
+                                                C. 提高计算机运行速度
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="quiz-question mt-4">
+                                    <h5>问题2：以下哪个是弱人工智能的例子？</h5>
+                                    <div class="quiz-options">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2" id="q2a">
+                                            <label class="form-check-label" for="q2a">
+                                                A. 能够进行哲学思考的AI
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2" id="q2b">
+                                            <label class="form-check-label" for="q2b">
+                                                B. 语音助手（如Siri）
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q2" id="q2c">
+                                            <label class="form-check-label" for="q2c">
+                                                C. 具有自我意识的AI
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary mt-4" onclick="checkQuiz()">
+                                    <i class="bi bi-check-circle"></i> 提交答案
+                                </button>
+                                
+                                <div id="quiz-result" class="mt-3" style="display: none;">
+                                    <div class="alert alert-success">
+                                        <h5><i class="bi bi-trophy"></i> 测验结果</h5>
+                                        <p id="result-text"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3"><i class="bi bi-robot"></i> AI学习中心</h5>
+                    <p>专为中学生设计的人工智能学习平台，致力于用简单有趣的方式普及AI知识。</p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-3">快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">首页</a></li>
+                        <li><a href="basics.html" class="text-white-50 text-decoration-none">AI基础</a></li>
+                        <li><a href="machine-learning.html" class="text-white-50 text-decoration-none">机器学习</a></li>
+                        <li><a href="resources.html" class="text-white-50 text-decoration-none">学习资源</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">学习资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">推荐书籍</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">在线课程</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">视频教程</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">学习工具</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">联系我们</h5>
+                    <p class="text-white-50">
+                        <i class="bi bi-envelope me-2"></i> contact@ailearning.cn<br>
+                        <i class="bi bi-globe me-2"></i> www.ailearning.cn
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-wechat"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-weibo"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center pt-3">
+                <p class="mb-0 text-white-50">© 2026 AI学习中心. 保留所有权利.</p>
+                <p class="small text-white-50">本网站内容仅供学习交流使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/basics.js"></script>
+</body>
+</html>

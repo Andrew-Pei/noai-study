@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神经网络基础 - AI学习中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-robot"></i> AI学习中心
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="basics.html">AI基础</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="machine-learning.html">机器学习</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="neural-networks.html">神经网络</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ethics.html">AI伦理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interactive.html">互动学习</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">学习资源</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header bg-info text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">神经网络基础</h1>
+                    <p class="lead mb-0">探索受大脑启发的计算模型</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                <li class="breadcrumb-item active" aria-current="page">神经网络</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="content-card">
+                        <h2 class="section-title">
+                            <i class="bi bi-brain text-info me-2"></i>
+                            什么是神经网络？
+                        </h2>
+                        <p>神经网络是受人类大脑神经元结构启发的计算模型，用于识别复杂模式和进行预测。</p>
+                        
+                        <div class="neuron-visual mt-4 mb-4 text-center">
+                            <div class="neuron-diagram">
+                                <div class="neuron-cell">
+                                    <div class="cell-body">
+                                        <i class="bi bi-circle-fill"></i>
+                                    </div>
+                                    <div class="dendrites">
+                                        <div class="dendrite"></div>
+                                        <div class="dendrite"></div>
+                                        <div class="dendrite"></div>
+                                    </div>
+                                    <div class="axon">
+                                        <div class="axon-terminal"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-3 small text-muted">神经元结构示意图</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mt-4">神经网络的基本组成：</h4>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <div class="nn-component">
+                                    <div class="component-icon bg-info">
+                                        <i class="bi bi-circle"></i>
+                                    </div>
+                                    <h5>神经元</h5>
+                                    <p class="small">神经网络的基本单元，模拟生物神经元</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="nn-component">
+                                    <div class="component-icon bg-primary">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                    <h5>连接权重</h5>
+                                    <p class="small">神经元之间的连接强度，决定信号传递</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="nn-component">
+                                    <div class="component-icon bg-success">
+                                        <i class="bi bi-layers"></i>
+                                    </div>
+                                    <h5>网络层</h5>
+                                    <p class="small">输入层、隐藏层、输出层组成网络结构</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mt-5">神经网络如何工作？</h4>
+                        <div class="nn-process mt-3">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h5>输入数据</h5>
+                                    <p>数据进入输入层，如图像像素、文本特征等</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h5>特征提取</h5>
+                                    <p>隐藏层逐层提取和组合特征</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h5>决策输出</h5>
+                                    <p>输出层产生最终结果，如分类、预测等</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mt-5">深度学习的优势：</h4>
+                        <ul class="mt-3">
+                            <li><strong>自动特征学习：</strong>无需手动设计特征，网络自动学习</li>
+                            <li><strong>处理复杂数据：</strong>擅长处理图像、语音、文本等复杂数据</li>
+                            <li><strong>强大的表达能力：</strong>能够学习复杂的非线性关系</li>
+                            <li><strong>端到端学习：</strong>直接从原始数据到最终结果</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-4">
+                            <h5><i class="bi bi-lightbulb"></i> 学习建议</h5>
+                            <p class="mb-0">神经网络就像多层过滤器，每层提取不同级别的特征。浅层学习简单特征（如边缘），深层学习复杂特征（如物体部件）。</p>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <a href="interactive.html" class="btn btn-primary btn-lg">
+                                <i class="bi bi-play-circle"></i> 体验互动学习
+                            </a>
+                            <a href="resources.html" class="btn btn-outline-primary btn-lg ms-2">
+                                <i class="bi bi-book"></i> 查看更多资源
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3"><i class="bi bi-robot"></i> AI学习中心</h5>
+                    <p>专为中学生设计的人工智能学习平台，致力于用简单有趣的方式普及AI知识。</p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-3">快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">首页</a></li>
+                        <li><a href="basics.html" class="text-white-50 text-decoration-none">AI基础</a></li>
+                        <li><a href="machine-learning.html" class="text-white-50 text-decoration-none">机器学习</a></li>
+                        <li><a href="neural-networks.html" class="text-white-50 text-decoration-none">神经网络</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">学习资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">推荐书籍</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">在线课程</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">视频教程</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">学习工具</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">联系我们</h5>
+                    <p class="text-white-50">
+                        <i class="bi bi-envelope me-2"></i> contact@ailearning.cn<br>
+                        <i class="bi bi-globe me-2"></i> www.ailearning.cn
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-wechat"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-weibo"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center pt-3">
+                <p class="mb-0 text-white-50">© 2026 AI学习中心. 保留所有权利.</p>
+                <p class="small text-white-50">本网站内容仅供学习交流使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

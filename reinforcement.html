@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度强化学习 - 重庆八中 NOAI 竞赛</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body data-page="reinforcement">
+    <div id="loadingOverlay" class="loading-overlay"><div class="loading-spinner"></div></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                NOAI 竞赛学习平台
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">AI基础</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="basics.html">AI基础概念</a></li><li><a class="dropdown-item" href="python-basics.html">Python编程</a></li><li><a class="dropdown-item" href="ethics.html">AI伦理法律</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">机器学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="machine-learning.html">机器学习基础</a></li><li><a class="dropdown-item" href="neural-networks.html">神经网络基础</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">深度学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="cnn-rnn.html">CNN与RNN</a></li><li><a class="dropdown-item" href="generative-models.html">生成模型</a></li><li><a class="dropdown-item active" href="reinforcement.html">强化学习</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">前沿技术</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="llm-prompt.html">LLM与提示工程</a></li><li><a class="dropdown-item" href="ai-agent.html">AI智能体系统</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link" href="practice.html">练习题库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">学习资源</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my-progress.html">我的进度</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header page-header-rl text-white py-5">
+        <div class="container">
+            <div class="row"><div class="col-lg-8 mx-auto text-center">
+                <div class="page-icon mb-3"><i class="bi bi-controller"></i></div>
+                <h1 class="display-4 fw-bold mb-3">深度强化学习</h1>
+                <p class="lead mb-0">从 AlphaGo 到 ChatGPT - 智能体如何通过试错学习</p>
+                <div class="mt-3"><span class="badge bg-light text-primary">NOAI 考点占比: 约 8%</span></div>
+            </div></div>
+        </div>
+    </header>
+
+    <div class="container py-3"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">首页</a></li><li class="breadcrumb-item">深度学习</li><li class="breadcrumb-item active">强化学习</li></ol></nav></div>
+
+    <main class="py-5"><div class="container"><div class="row">
+        <div class="col-lg-3 mb-4"><div class="sidebar-card sticky-top"><h5 class="sidebar-title">目录</h5><div class="list-group list-group-flush"><a href="#intro" class="list-group-item list-group-item-action">强化学习简介</a><a href="#basic" class="list-group-item list-group-item-action">基本概念</a><a href="#qlearning" class="list-group-item list-group-item-action">Q-Learning</a><a href="#dqn" class="list-group-item list-group-item-action">DQN</a><a href="#ppo" class="list-group-item list-group-item-action">PPO</a><a href="#quiz" class="list-group-item list-group-item-action">练习题</a></div></div></div>
+        <div class="col-lg-9">
+            <section id="intro" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-lightbulb text-primary me-2"></i>强化学习简介</h2><div class="content-card"><div class="alert alert-info"><i class="bi bi-info-circle me-2"></i><strong>强化学习</strong>是一种通过与环境交互、获得奖励来学习最优策略的机器学习方法。</div><div class="rl-diagram"><div class="rl-box">智能体<br><small>Agent</small></div><div class="rl-arrow bidir"><i class="bi bi-arrow-left-right"></i><br>动作/状态</div><div class="rl-box env">环境<br><small>Environment</small></div><div class="rl-arrow"><i class="bi bi-arrow-return-left"></i><br>奖励</div></div></div></section>
+
+            <section id="basic" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-book text-primary me-2"></i>基本概念</h2><div class="content-card"><div class="row g-3"><div class="col-md-3"><div class="rl-concept"><strong>状态 (S)</strong><p class="small">环境当前情况</p></div></div><div class="col-md-3"><div class="rl-concept"><strong>动作 (A)</strong><p class="small">智能体行为</p></div></div><div class="col-md-3"><div class="rl-concept"><strong>奖励 (R)</strong><p class="small">反馈信号</p></div></div><div class="col-md-3"><div class="rl-concept"><strong>策略 (π)</strong><p class="small">行动规则</p></div></div></div><h5 class="mt-4">核心要素</h5><ul><li><strong>探索 vs 利用</strong>: 尝试新动作 vs 利用已知好策略</li><li><strong>折扣因子 γ</strong>: 未来奖励的权重</li><li><strong>回报</strong>: 累计折扣奖励</li></ul></div></section>
+
+            <section id="qlearning" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-table text-primary me-2"></i>Q-Learning</h2><div class="content-card"><p>Q-Learning 是一种值迭代算法，学习状态-动作价值函数 Q(s,a)。</p><div class="formula-box">Q(s,a) ← Q(s,a) + α[r + γ max Q(s',a') - Q(s,a)]</div><p class="small text-muted">贝尔曼方程更新 Q 值</p></div></section>
+
+            <section id="dqn" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-cpu text-primary me-2"></i>DQN (深度 Q 网络)</h2><div class="content-card"><p>DQN 将 Q-Learning 与神经网络结合，用神经网络近似 Q 函数。</p><div class="alert alert-warning"><i class="bi bi-exclamation-triangle me-2"></i>关键技巧：经验回放 + 目标网络</div><h5>应用</h5><p> Atari 游戏超越人类水平，AlphaGo 的基础</p></div></section>
+
+            <section id="ppo" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-bullseye text-primary me-2"></i>PPO (近端策略优化)</h2><div class="content-card"><p>PPO 是目前最流行的策略梯度算法，训练稳定、易于实现。</p><ul><li>策略梯度方法</li><li>信任区域优化</li><li>ChatGPT RLHF 阶段使用</li></ul></div></section>
+
+            <section id="quiz" class="content-section"><h2 class="section-title"><i class="bi bi-patch-question text-primary me-2"></i>练习题</h2><div class="content-card"><div class="quiz-container" id="rlQuiz"></div><button class="btn btn-primary mt-3" onclick="checkRlQuiz()"><i class="bi bi-check-circle"></i> 提交答案</button><div id="quizResult" class="mt-3" style="display:none;"></div></div></section>
+        </div>
+    </div></div></main>
+
+    <footer class="footer"><div class="container"><div class="row align-items-center"><div class="col-md-6"><p class="footer-text mb-0">© 2026 重庆市第八中学校 | NOAI 竞赛学习平台</p></div><div class="col-md-6 text-md-end"><a href="llm-prompt.html" class="footer-link">下一章: LLM与提示工程 <i class="bi bi-arrow-right"></i></a></div></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script src="js/main.js"></script><script src="js/countdown.js"></script><script src="js/progress-tracker.js"></script><script src="js/reinforcement.js"></script>
+</body>
+</html>

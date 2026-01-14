@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 智能体系统 - 重庆八中 NOAI 竞赛</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body data-page="ai-agent">
+    <div id="loadingOverlay" class="loading-overlay"><div class="loading-spinner"></div></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                NOAI 竞赛学习平台
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">AI基础</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="basics.html">AI基础概念</a></li><li><a class="dropdown-item" href="python-basics.html">Python编程</a></li><li><a class="dropdown-item" href="ethics.html">AI伦理法律</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">机器学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="machine-learning.html">机器学习基础</a></li><li><a class="dropdown-item" href="neural-networks.html">神经网络基础</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">深度学习</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="cnn-rnn.html">CNN与RNN</a></li><li><a class="dropdown-item" href="generative-models.html">生成模型</a></li><li><a class="dropdown-item" href="reinforcement.html">强化学习</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">前沿技术</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="llm-prompt.html">LLM与提示工程</a></li><li><a class="dropdown-item active" href="ai-agent.html">AI智能体系统</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link" href="practice.html">练习题库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">学习资源</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my-progress.html">我的进度</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header page-header-agent text-white py-5">
+        <div class="container">
+            <div class="row"><div class="col-lg-8 mx-auto text-center">
+                <div class="page-icon mb-3"><i class="bi bi-robot"></i></div>
+                <h1 class="display-4 fw-bold mb-3">AI 智能体系统</h1>
+                <p class="lead mb-0">从单智能体到多智能体协作 - AI Agent 设计与应用</p>
+                <div class="mt-3"><span class="badge bg-light text-primary">NOAI 考点占比: 约 10%</span><span class="badge bg-warning text-dark">重要程度: ★★★★★</span></div>
+            </div></div>
+        </div>
+    </header>
+
+    <div class="container py-3"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">首页</a></li><li class="breadcrumb-item">前沿技术</li><li class="breadcrumb-item active">AI智能体系统</li></ol></nav></div>
+
+    <main class="py-5"><div class="container"><div class="row">
+        <div class="col-lg-3 mb-4"><div class="sidebar-card sticky-top"><h5 class="sidebar-title">目录</h5><div class="list-group list-group-flush"><a href="#agent-intro" class="list-group-item list-group-item-action">智能体简介</a><a href="#agent-structure" class="list-group-item list-group-item-action">智能体结构</a><a href="#rpa" class="list-group-item list-group-item-action">RPA</a><a href="#multi-agent" class="list-group-item list-group-item-action">多智能体系统</a><a href="#framework" class="list-group-item list-group-item-action">开发框架</a><a href="#quiz" class="list-group-item list-group-item-action">练习题</a></div></div></div>
+        <div class="col-lg-9">
+            <section id="agent-intro" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-lightbulb text-primary me-2"></i>AI 智能体简介</h2><div class="content-card"><div class="alert alert-info"><i class="bi bi-info-circle me-2"></i><strong>AI 智能体 (Agent)</strong>是能够感知环境、自主决策并执行行动的智能系统。</div><h5>核心特征</h5><div class="row g-3"><div class="col-md-3"><div class="agent-feature"><i class="bi bi-eye"></i><h6>感知</h6><p class="small">观察环境状态</p></div></div><div class="col-md-3"><div class="agent-feature"><i class="bi bi-cpu"></i><h6>决策</h6><p class="small">推理规划行动</p></div></div><div class="col-md-3"><div class="agent-feature"><i class="bi bi-lightning"></i><h6>行动</h6><p class="small">执行具体操作</p></div></div><div class="col-md-3"><div class="agent-feature"><i class="bi bi-arrow-repeat"></i><h6>学习</h6><p class="small">从经验中改进</p></div></div></div></div></section>
+
+            <section id="agent-structure" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-diagram-3 text-primary me-2"></i>智能体结构</h2><div class="content-card"><p>典型的 LLM Agent 包含以下模块：</p><div class="agent-structure"><div class="agent-module">配置文件<br><small>Profile</small></div><div class="agent-module">记忆系统<br><small>Memory</small></div><div class="agent-module">规划能力<br><small>Planning</small></div><div class="agent-module">工具使用<br><small>Tools</small></div><div class="agent-module">行动执行<br><small>Action</small></div></div></div></section>
+
+            <section id="rpa" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-gear text-primary me-2"></i>机器人流程自动化 (RPA)</h2><div class="content-card"><p>RPA 通过软件机器人模拟人类操作，实现业务流程自动化。</p><h5>应用场景</h5><ul><li>数据录入与整理</li><li>邮件自动处理</li><li>报表生成</li><li>网页数据抓取</li></ul><div class="alert alert-warning"><i class="bi bi-exclamation-triangle me-2"></i>AI + RPA = 智能自动化，能处理更复杂的非结构化任务</div></div></section>
+
+            <section id="multi-agent" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-people text-primary me-2"></i>多智能体系统</h2><div class="content-card"><p>多个智能体协作完成复杂任务。</p><h5>协作模式</h5><div class="row g-3"><div class="col-md-6"><div class="coop-mode"><h6>层级式</h6><p class="small">管理者-工作者结构</p></div></div><div class="col-md-6"><div class="coop-mode"><h6>平等式</h6><p class="small">投票协商决策</p></div></div></div><h5 class="mt-4">典型案例</h5><ul><li><strong>AutoGen</strong>: 微软的多智能体框架</li><li><strong>MetaGPT</strong>: 软件开发团队模拟</li><li><strong>OpenDevin</strong>: AI 软件工程师</li></ul></div></section>
+
+            <section id="framework" class="content-section mb-5"><h2 class="section-title"><i class="bi bi-code-square text-primary me-2"></i>开发框架</h2><div class="content-card"><div class="row g-3"><div class="col-md-4"><div class="fw-card"><h6>LangChain</h6><p class="small">最流行的 LLM 应用开发框架</p></div></div><div class="col-md-4"><div class="fw-card"><h6>AutoGPT</h6><p class="small">自主 Agent 框架</p></div></div><div class="col-md-4"><div class="fw-card"><h6>CrewAI</h6><p class="small">多角色 Agent 协作</p></div></div></div></div></section>
+
+            <section id="quiz" class="content-section"><h2 class="section-title"><i class="bi bi-patch-question text-primary me-2"></i>练习题</h2><div class="content-card"><div class="quiz-container" id="agentQuiz"></div><button class="btn btn-primary mt-3" onclick="checkAgentQuiz()"><i class="bi bi-check-circle"></i> 提交答案</button><div id="quizResult" class="mt-3" style="display:none;"></div></div></section>
+        </div>
+    </div></div></main>
+
+    <footer class="footer"><div class="container"><div class="row align-items-center"><div class="col-md-6"><p class="footer-text mb-0">© 2026 重庆市第八中学校 | NOAI 竞赛学习平台</p></div><div class="col-md-6 text-md-end"><a href="practice.html" class="footer-link">前往练习题库 <i class="bi bi-arrow-right"></i></a></div></div></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script src="js/main.js"></script><script src="js/countdown.js"></script><script src="js/progress-tracker.js"></script><script src="js/ai-agent.js"></script>
+</body>
+</html>

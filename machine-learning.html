@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>机器学习入门 - AI学习中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-robot"></i> AI学习中心
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="basics.html">AI基础</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="machine-learning.html">机器学习</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="neural-networks.html">神经网络</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ethics.html">AI伦理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interactive.html">互动学习</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">学习资源</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header bg-success text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">机器学习入门</h1>
+                    <p class="lead mb-0">让计算机从数据中自动学习的技术</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                <li class="breadcrumb-item active" aria-current="page">机器学习</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="sidebar-card">
+                        <h5 class="sidebar-title">目录</h5>
+                        <div class="list-group list-group-flush">
+                            <a href="#what-is-ml" class="list-group-item list-group-item-action">什么是机器学习</a>
+                            <a href="#ml-types" class="list-group-item list-group-item-action">机器学习类型</a>
+                            <a href="#supervised-learning" class="list-group-item list-group-item-action">监督学习</a>
+                            <a href="#unsupervised-learning" class="list-group-item list-group-item-action">无监督学习</a>
+                            <a href="#reinforcement-learning" class="list-group-item list-group-item-action">强化学习</a>
+                            <a href="#ml-process" class="list-group-item list-group-item-action">机器学习流程</a>
+                            <a href="#ml-demo" class="list-group-item list-group-item-action">简单演示</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card mt-4">
+                        <h5 class="sidebar-title">学习提示</h5>
+                        <div class="tip-content">
+                            <i class="bi bi-lightbulb text-warning"></i>
+                            <p class="mb-0 small">机器学习就像教小孩认东西，需要大量的例子和练习。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="col-lg-9">
+                    <!-- What is ML -->
+                    <section id="what-is-ml" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-graph-up text-success me-2"></i>
+                            什么是机器学习？
+                        </h2>
+                        <div class="content-card">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <p>机器学习是人工智能的一个分支，它让计算机能够从数据中自动学习并改进，而无需明确编程。</p>
+                                    <p>简单来说，机器学习就是让计算机通过分析大量数据，自己发现规律和模式。</p>
+                                    <div class="key-points">
+                                        <h5 class="mt-4 mb-3">与传统编程的区别：</h5>
+                                        <ul>
+                                            <li><strong>传统编程：</strong>规则 + 数据 → 答案</li>
+                                            <li><strong>机器学习：</strong>数据 + 答案 → 规则</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="concept-visual" style="border-color: var(--success-color);">
+                                        <i class="bi bi-bar-chart display-1 text-success"></i>
+                                        <p class="mt-3 small">数据 → 学习 → 预测</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h5>生活中的机器学习例子：</h5>
+                                <div class="row mt-3">
+                                    <div class="col-md-4">
+                                        <div class="example-card">
+                                            <i class="bi bi-envelope text-primary"></i>
+                                            <h6>垃圾邮件过滤</h6>
+                                            <p class="small">通过学习大量邮件，自动识别垃圾邮件</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="example-card">
+                                            <i class="bi bi-camera text-success"></i>
+                                            <h6>人脸识别</h6>
+                                            <p class="small">通过学习人脸特征，识别不同的人</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="example-card">
+                                            <i class="bi bi-cart text-warning"></i>
+                                            <h6>商品推荐</h6>
+                                            <p class="small">根据你的购买历史推荐可能喜欢的商品</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ML Types -->
+                    <section id="ml-types" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-diagram-3 text-success me-2"></i>
+                            机器学习的主要类型
+                        </h2>
+                        <div class="content-card">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="type-card">
+                                        <div class="type-icon bg-success">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <h5>监督学习</h5>
+                                        <p class="small">使用带有标签的数据进行训练，就像有老师指导的学习。</p>
+                                        <div class="type-tags">
+                                            <span class="badge bg-primary">分类</span>
+                                            <span class="badge bg-primary">回归</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="type-card">
+                                        <div class="type-icon bg-info">
+                                            <i class="bi bi-eye-slash"></i>
+                                        </div>
+                                        <h5>无监督学习</h5>
+                                        <p class="small">使用没有标签的数据，让机器自己发现数据中的模式。</p>
+                                        <div class="type-tags">
+                                            <span class="badge bg-info">聚类</span>
+                                            <span class="badge bg-info">降维</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="type-card">
+                                        <div class="type-icon bg-warning">
+                                            <i class="bi bi-trophy"></i>
+                                        </div>
+                                        <h5>强化学习</h5>
+                                        <p class="small">通过试错和奖励机制学习，就像训练宠物一样。</p>
+                                        <div class="type-tags">
+                                            <span class="badge bg-warning">游戏AI</span>
+                                            <span class="badge bg-warning">机器人</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Supervised Learning -->
+                    <section id="supervised-learning" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-check-circle text-success me-2"></i>
+                            监督学习
+                        </h2>
+                        <div class="content-card">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>工作原理：</h5>
+                                    <p>监督学习就像有老师指导的学习。我们给计算机提供带有"正确答案"的数据，让它学习输入和输出之间的关系。</p>
+                                    
+                                    <div class="learning-example mt-4">
+                                        <h6>例子：识别水果</h6>
+                                        <div class="example-steps">
+                                            <div class="step">
+                                                <span class="step-number">1</span>
+                                                <span class="step-text">提供带标签的图片：苹果🍎、香蕉🍌、橙子🍊</span>
+                                            </div>
+                                            <div class="step">
+                                                <span class="step-number">2</span>
+                                                <span class="step-text">计算机学习每种水果的特征</span>
+                                            </div>
+                                            <div class="step">
+                                                <span class="step-number">3</span>
+                                                <span class="step-text">给计算机新图片，它能识别是什么水果</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ml-visualization">
+                                        <div class="viz-title">监督学习流程</div>
+                                        <div class="viz-flow">
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-image"></i></div>
+                                                <div class="flow-text">带标签的训练数据</div>
+                                            </div>
+                                            <div class="flow-arrow">→</div>
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-cpu"></i></div>
+                                                <div class="flow-text">机器学习模型</div>
+                                            </div>
+                                            <div class="flow-arrow">→</div>
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-lightbulb"></i></div>
+                                                <div class="flow-text">预测新数据</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="applications mt-4">
+                                        <h6>常见应用：</h6>
+                                        <ul>
+                                            <li>垃圾邮件检测（是垃圾邮件/不是垃圾邮件）</li>
+                                            <li>房价预测（根据特征预测价格）</li>
+                                            <li>疾病诊断（根据症状判断疾病）</li>
+                                            <li>手写数字识别</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Unsupervised Learning -->
+                    <section id="unsupervised-learning" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-question-circle text-info me-2"></i>
+                            无监督学习
+                        </h2>
+                        <div class="content-card">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>工作原理：</h5>
+                                    <p>无监督学习就像自学。我们只给计算机数据，但不告诉它正确答案，让它自己发现数据中的模式和结构。</p>
+                                    
+                                    <div class="learning-example mt-4">
+                                        <h6>例子：顾客分组</h6>
+                                        <div class="example-steps">
+                                            <div class="step">
+                                                <span class="step-number">1</span>
+                                                <span class="step-text">提供顾客的购买数据</span>
+                                            </div>
+                                            <div class="step">
+                                                <span class="step-number">2</span>
+                                                <span class="step-text">计算机分析顾客的相似性</span>
+                                            </div>
+                                            <div class="step">
+                                                <span class="step-number">3</span>
+                                                <span class="step-text">自动将顾客分成不同群体</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ml-visualization">
+                                        <div class="viz-title">无监督学习流程</div>
+                                        <div class="viz-flow">
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-database"></i></div>
+                                                <div class="flow-text">无标签的数据</div>
+                                            </div>
+                                            <div class="flow-arrow">→</div>
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-cpu"></i></div>
+                                                <div class="flow-text">发现模式</div>
+                                            </div>
+                                            <div class="flow-arrow">→</div>
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-diagram-3"></i></div>
+                                                <div class="flow-text">分组/降维</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="applications mt-4">
+                                        <h6>常见应用：</h6>
+                                        <ul>
+                                            <li>顾客细分（将顾客分成不同群体）</li>
+                                            <li>异常检测（发现异常行为）</li>
+                                            <li>推荐系统（发现相似物品）</li>
+                                            <li>数据可视化（将高维数据降到2D/3D）</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Reinforcement Learning -->
+                    <section id="reinforcement-learning" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-trophy text-warning me-2"></i>
+                            强化学习
+                        </h2>
+                        <div class="content-card">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>工作原理：</h5>
+                                    <p>强化学习就像训练宠物。智能体通过与环境互动，根据获得的奖励或惩罚来学习最佳行为策略。</p>
+                                    
+                                    <div class="learning-example mt-4">
+                                        <h6>例子：训练AI玩游戏</h6>
+                                        <div class="example-steps">
+                                            <div class="step">
+                                                <span class="step-number">1</span>
+                                                <span class="step-text">AI尝试不同的动作</span>
+                                            </div>
+                                            <div class="step">
+                                                <span class="step-number">2</span>
+                                                <span class="step-text">根据得分获得奖励/惩罚</span>
+                                            </div>
+                                            <div class="step">
+                                                <span class="step-number">3</span>
+                                                <span class="step-text">学习哪些动作能获得更高分</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ml-visualization">
+                                        <div class="viz-title">强化学习流程</div>
+                                        <div class="viz-flow">
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-joystick"></i></div>
+                                                <div class="flow-text">智能体</div>
+                                            </div>
+                                            <div class="flow-arrow">↔</div>
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-globe"></i></div>
+                                                <div class="flow-text">环境</div>
+                                            </div>
+                                            <div class="flow-arrow">↑</div>
+                                            <div class="flow-item">
+                                                <div class="flow-icon"><i class="bi bi-star"></i></div>
+                                                <div class="flow-text">奖励</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="applications mt-4">
+                                        <h6>常见应用：</h6>
+                                        <ul>
+                                            <li>游戏AI（AlphaGo、游戏机器人）</li>
+                                            <li>机器人控制（让机器人学习走路）</li>
+                                            <li>自动驾驶（学习驾驶策略）</li>
+                                            <li>资源管理（数据中心能耗优化）</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ML Process -->
+                    <section id="ml-process" class="content-section mb-5">
+                        <h2 class="section-title">
+                            <i class="bi bi-gear text-success me-2"></i>
+                            机器学习流程
+                        </h2>
+                        <div class="content-card">
+                            <div class="process-steps">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>数据收集</h5>
+                                        <p>收集相关的数据，数据质量直接影响学习效果。</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>数据预处理</h5>
+                                        <p>清洗数据、处理缺失值、标准化等。</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>选择模型</h5>
+                                        <p>根据问题类型选择合适的机器学习算法。</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>训练模型</h5>
+                                        <p>用训练数据让模型学习。</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h5>评估模型</h5>
+                                        <p>用测试数据评估模型的性能。</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">
+                                        <h5>调优部署</h5>
+                                        <p>优化模型参数，部署到实际应用。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ML Demo -->
+                    <section id="ml-demo" class="content-section">
+                        <h2 class="section-title">
+                            <i class="bi bi-play-circle text-success me-2"></i>
+                            简单演示：线性回归
+                        </h2>
+                        <div class="content-card">
+                            <div class="demo-container">
+                                <div class="demo-explanation">
+                                    <h5>演示说明：</h5>
+                                    <p>线性回归是监督学习的一种，用于预测连续值（如房价、温度等）。</p>
+                                    <p>在这个演示中，我们将模拟一个简单的线性回归模型。</p>
+                                    
+                                    <div class="demo-controls mt-4">
+                                        <div class="mb-3">
+                                            <label for="dataPoints" class="form-label">数据点数量：<span id="pointsValue">50</span></label>
+                                            <input type="range" class="form-range" id="dataPoints" min="10" max="100" value="50">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="noiseLevel" class="form-label">噪声水平：<span id="noiseValue">0.3</span></label>
+                                            <input type="range" class="form-range" id="noiseLevel" min="0" max="1" step="0.1" value="0.3">
+                                        </div>
+                                        <button class="btn btn-success" onclick="generateData()">
+                                            <i class="bi bi-arrow-clockwise"></i> 生成新数据
+                                        </button>
+                                        <button class="btn btn-primary ms-2" onclick="trainModel()">
+                                            <i class="bi bi-play"></i> 训练模型
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="demo-visualization">
+                                    <div class="viz-container">
+                                        <canvas id="regressionCanvas" width="400" height="300"></canvas>
+                                    </div>
+                                    <div class="viz-info mt-3">
+                                        <div id="modelInfo" class="alert alert-info">
+                                            <i class="bi bi-info-circle"></i> 点击"训练模型"开始演示
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="demo-explanation mt-4">
+                                <h5>学习要点：</h5>
+                                <ul>
+                                    <li>线性回归试图找到一条直线，最好地拟合数据点</li>
+                                    <li>模型通过最小化预测值和实际值之间的误差来学习</li>
+                                    <li>噪声越大，拟合的难度越大</li>
+                                    <li>数据点越多，模型通常越稳定</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3"><i class="bi bi-robot"></i> AI学习中心</h5>
+                    <p>专为中学生设计的人工智能学习平台，致力于用简单有趣的方式普及AI知识。</p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-3">快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">首页</a></li>
+                        <li><a href="basics.html" class="text-white-50 text-decoration-none">AI基础</a></li>
+                        <li><a href="machine-learning.html" class="text-white-50 text-decoration-none">机器学习</a></li>
+                        <li><a href="resources.html" class="text-white-50 text-decoration-none">学习资源</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">学习资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">推荐书籍</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">在线课程</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">视频教程</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">学习工具</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">联系我们</h5>
+                    <p class="text-white-50">
+                        <i class="bi bi-envelope me-2"></i> contact@ailearning.cn<br>
+                        <i class="bi bi-globe me-2"></i> www.ailearning.cn
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-wechat"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-weibo"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center pt-3">
+                <p class="mb-0 text-white-50">© 2026 AI学习中心. 保留所有权利.</p>
+                <p class="small text-white-50">本网站内容仅供学习交流使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/machine-learning.js"></script>
+</body>
+</html>
