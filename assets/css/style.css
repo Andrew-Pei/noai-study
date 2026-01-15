@@ -390,20 +390,6 @@ main {
     box-shadow: var(--shadow-primary);
 }
 
-.feature-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-    color: white;
-    border-radius: var(--radius);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow-primary);
-}
-
 /* ============ 按钮 ============ */
 .btn {
     display: inline-flex;
